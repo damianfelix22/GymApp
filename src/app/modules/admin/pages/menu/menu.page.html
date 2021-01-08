@@ -4,7 +4,7 @@
     <app-side-menu></app-side-menu>
   </header>
 
-  <div id="main">
+  <ion-content id="main">
 
     <div id="title-div">
       <ion-text id="subtitle">Bienvenido</ion-text>
@@ -15,8 +15,18 @@
     <div style="background-color: white;"><div id="card"></div></div>
   
     <div id="content">
-      
+      <div id="menu-row">
+        <app-clases-button></app-clases-button>
+        <app-alumnos-button></app-alumnos-button>
+      </div>
+
+      <ion-row style="height: 25px;"></ion-row>
+
+      <div id="menu-row">
+        <app-instructor-button></app-instructor-button>
+        <app-herramientas-button></app-herramientas-button>
+      </div>
     </div>
 
-  </div>
+  </ion-content>
 </body>
