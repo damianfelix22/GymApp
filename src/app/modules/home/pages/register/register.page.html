@@ -1,0 +1,49 @@
+
+
+<body>
+
+  <header>
+    <div id="header-div" [routerLink]="['../home']">
+      <ion-icon name="arrow-back"></ion-icon>
+      <ion-title>back</ion-title>
+    </div>
+  </header>
+
+  <div id="content-div">
+    <form (ngSubmit)="onSubmit()">
+      <ion-item>
+        <ion-label color="medium" position="floating">Nombre</ion-label>
+        <ion-input type="text" autocomplete="name" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="medium" position="floating">Apellido</ion-label>
+        <ion-input type="text" autocomplete="family-name" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="medium" position="floating">Email</ion-label>
+        <ion-input type="email" autocomplete="email" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="medium" position="floating">Nombre del Gimnasio</ion-label>
+        <ion-input type="text" autocomplete="off" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="medium" position="floating">Contraseña</ion-label>
+        <ion-input type="password" autocomplete="off" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="medium" position="floating">Repetir Contraseña</ion-label>
+        <ion-input type="password" autocomplete="off" required></ion-input>
+      </ion-item>
+
+      <ion-row style="height: 4em;"></ion-row>
+
+      <ion-button class="button" type="submit">Crear Gimnasio</ion-button>
+    </form>
+  </div>
+</body>
