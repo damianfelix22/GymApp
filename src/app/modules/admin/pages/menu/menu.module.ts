@@ -1,3 +1,5 @@
+import { SideMenuComponent } from './../../../../core/components/side-menu/side-menu.component';
+import { AvatarComponent } from './../../../../core/components/avatar/avatar.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -15,6 +17,6 @@ import { MenuPage } from './menu.page';
     IonicModule,
     MenuPageRoutingModule
   ],
-  declarations: [MenuPage]
+  declarations: [MenuPage, AvatarComponent,SideMenuComponent]
 })
 export class MenuPageModule {}
