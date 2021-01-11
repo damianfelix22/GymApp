@@ -8,7 +8,13 @@ import { MenuController } from '@ionic/angular';
 })
 export class SideMenuComponent implements OnInit {
 
-  constructor(private menu: MenuController) { }
+  user: any = {
+    name: 'Pedro',
+    lastname: 'Suarez',
+    user_role: 'admin'
+  }
+
+  constructor(private menu: MenuController) {}
 
   ngOnInit() { }
   
@@ -16,5 +22,6 @@ export class SideMenuComponent implements OnInit {
     this.menu.enable(true, 'menu');
     this.menu.open('menu');
   }
+
 
 }

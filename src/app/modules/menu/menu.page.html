@@ -15,10 +15,23 @@
     <div style="background-color: white;"><div id="card"></div></div>
   
     <div id="content">
-      <div id="menu-div">
+      <div id="menu-div" *ngIf="user.user_role == 'admin'" >
         <app-clases-button class="menu-item"></app-clases-button>
         <app-alumnos-button class="menu-item"></app-alumnos-button>
         <app-instructor-button class="menu-item"></app-instructor-button>
+        <app-rutinas-button class="menu-item"></app-rutinas-button>
+        <app-herramientas-button class="menu-item"></app-herramientas-button>
+      </div>
+
+      <div id="menu-div" *ngIf="user.user_role == 'alumno'" >
+        <app-clases-button class="menu-item"></app-clases-button>
+        <app-rutinas-button class="menu-item"></app-rutinas-button>
+        <app-herramientas-button class="menu-item"></app-herramientas-button>
+      </div>
+
+      <div id="menu-div" *ngIf="user.user_role == 'instructor'" >
+        <app-clases-button class="menu-item"></app-clases-button>
+        <app-alumnos-button class="menu-item"></app-alumnos-button>
         <app-rutinas-button class="menu-item"></app-rutinas-button>
         <app-herramientas-button class="menu-item"></app-herramientas-button>
       </div>

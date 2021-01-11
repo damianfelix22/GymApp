@@ -7,16 +7,36 @@
     </ion-toolbar>
   </ion-header>
   <ion-content class="menu">
-    <ion-list>
-      <ion-item>Inicio</ion-item>
-      <ion-item>Clases</ion-item>
-      <ion-item>Alumnos</ion-item>
-      <ion-item>Instructores</ion-item>
-      <ion-item>Rutinas</ion-item>
-      <ion-item>Herramientas</ion-item>
+
+    <ion-list *ngIf="user.user_role == 'admin'">
+      <ion-item [routerLink]="['../menu']">Inicio</ion-item>
+      <ion-item  [routerLink]="['../clases']">Clases</ion-item>
+      <ion-item  [routerLink]="['../alumnos']">Alumnos</ion-item>
+      <ion-item  [routerLink]="['../instructores']">Instructores</ion-item>
+      <ion-item  [routerLink]="['../rutinas']">Rutinas</ion-item>
+      <ion-item  [routerLink]="['../herramientas']">Herramientas</ion-item>
     </ion-list>
+
+    <ion-list *ngIf="user.user_role == 'alumno'">
+      <ion-item [routerLink]="['../menu']">Inicio</ion-item>
+      <ion-item  [routerLink]="['../clases']">Clases</ion-item>
+      <ion-item  [routerLink]="['../alumnos']">Alumnos</ion-item>
+      <ion-item  [routerLink]="['../instructores']">Instructores</ion-item>
+      <ion-item  [routerLink]="['../rutinas']">Rutinas</ion-item>
+      <ion-item  [routerLink]="['../herramientas']">Herramientas</ion-item>
+    </ion-list>
+
+    <ion-list *ngIf="user.user_role == 'instructor'">
+      <ion-item [routerLink]="['../menu']">Inicio</ion-item>
+      <ion-item  [routerLink]="['../clases']">Clases</ion-item>
+      <ion-item  [routerLink]="['../alumnos']">Alumnos</ion-item>
+      <ion-item  [routerLink]="['../instructores']">Instructores</ion-item>
+      <ion-item  [routerLink]="['../rutinas']">Rutinas</ion-item>
+      <ion-item  [routerLink]="['../herramientas']">Herramientas</ion-item>
+    </ion-list>
+
     <div class="div-button">
-      <ion-button class="button">Cerrar Sesión</ion-button>
+      <ion-button class="button" [routerLink]="['../home']">Cerrar Sesión</ion-button>
     </div>
     
   </ion-content>
