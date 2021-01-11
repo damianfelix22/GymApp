@@ -13,8 +13,6 @@ export class AlumnosPage implements OnInit {
     user_role: 'admin'
   }
 
-  clases: any[] = ["TAEKWONDO", "SPINNING", "FUNCIONAL", "CROSSFIT"];
-
   constructor() { }
 
   ngOnInit() {

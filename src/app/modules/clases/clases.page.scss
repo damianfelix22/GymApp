@@ -1,6 +1,7 @@
 body{
     background-color: #00bb70;
     height: 100%;
+    width: 100%;
 }
 
 header{
@@ -35,17 +36,23 @@ header{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
-#menu-div{
+#card-div{
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
 }
 
-.menu-item{
-    display: flex;
-    justify-content: center;
-    padding: 15px;
-    width: 50%;
-    box-sizing: border-box;
+#clase{
+    border-radius: 15px;
+    height: 100%;
+    width: 80%;
+}
+
+#searchbar{
+    width: 90%;
+    --border-radius: 35px;
+    --box-shadow: 0px;
 }

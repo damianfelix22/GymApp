@@ -13,13 +13,31 @@
     </div>
 
     <div id="content">
-      
-      <div class="ion-padding" *ngFor="let clase of clases" >
-        <div>
-          <p class="nombre_clase">{{clase}}</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi assumenda a dignissimos nobis voluptatibus obcaecati sit explicabo, eius voluptatum. Quisquam minus laudantium ab laborum omnis nostrum id accusantium delectus suscipit.</p>
-        </div>
+
+      <ion-row style="height: 10px;"></ion-row>
+
+      <ion-searchbar id="searchbar" debounce="500" placeholder="busca clases o instructores"></ion-searchbar>
+
+
+      <div id="card-div">
+        <ion-card mode="ios" *ngFor="let clase of clases" id="clase">
+          <ion-img src="{{clase.image}}"></ion-img>
+          <ion-card-header>
+            <ion-card-title>{{clase.name}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-text>{{clase.description}}</ion-text><br><br>
+            <ion-row>
+              <ion-col size="6"><ion-text >{{clase.start}} - {{clase.end}}</ion-text></ion-col>
+              <ion-col size="6"><ion-text >{{clase.instructor}}</ion-text></ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
       </div>
+      
+      
+
+      <ion-row style="height: 80px;"></ion-row>
 
     </div>
 
