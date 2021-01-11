@@ -16,11 +16,18 @@
 
       <ion-row style="height: 10px;"></ion-row>
 
-      <ion-searchbar id="searchbar" debounce="500" placeholder="busca clases o instructores"></ion-searchbar>
+      <ion-searchbar
+        id="searchbar" 
+        debounce="500" 
+        placeholder="busca clases o instructores" 
+        (ionInput)="buscar($event)" 
+        (ionCancel)="cancelarBusqueda($event)"
+        [(ngModel)]="miBuscador">
+      </ion-searchbar>
 
 
       <div id="card-div">
-        <ion-card mode="ios" *ngFor="let clase of clases" id="clase">
+        <ion-card mode="ios" *ngFor="let clase of clasesEncontradas" id="clase">
           <ion-img src="{{clase.image}}"></ion-img>
           <ion-card-header>
             <ion-card-title>{{clase.name}}</ion-card-title>
