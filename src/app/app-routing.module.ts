@@ -22,7 +22,11 @@ const routes: Routes = [
   {
     path: 'menu',
     loadChildren: () => import('./modules/admin/pages/menu/menu.module').then( m => m.MenuPageModule)
+  },  {
+    path: 'clases',
+    loadChildren: () => import('./modules/admin/pages/clases/clases.module').then( m => m.ClasesPageModule)
   },
+
 ];
 
 @NgModule({
