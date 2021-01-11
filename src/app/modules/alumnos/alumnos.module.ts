@@ -7,13 +7,17 @@ import { IonicModule } from '@ionic/angular';
 import { AlumnosPageRoutingModule } from './alumnos-routing.module';
 
 import { AlumnosPage } from './alumnos.page';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { CoreModule } from 'src/app/core/core.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AlumnosPageRoutingModule
+    AlumnosPageRoutingModule,
+    SharedModule,
+    CoreModule
   ],
   declarations: [AlumnosPage]
 })

@@ -7,6 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClasesPage implements OnInit {
 
+  user: any = {
+    name: 'Pedro',
+    lastname: 'Suarez',
+    user_role: 'admin'
+  }
+
+  clases: any[] = ["TAEKWONDO", "SPINNING", "FUNCIONAL", "CROSSFIT"];
+
   constructor() { }
 
   ngOnInit() {
