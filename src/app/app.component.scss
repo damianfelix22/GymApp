@@ -1,0 +1,27 @@
+.menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.div-button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.button{
+    position: absolute;
+    bottom: 20px;
+    height: 40px;
+    --border-radius: 25px;
+    --background: #00bb70;
+    --box-shadow: 0;
+    color:white;
+    font-weight: bold;
+    font-size: 13px;
+}

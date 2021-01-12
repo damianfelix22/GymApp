@@ -14,7 +14,7 @@ import { CoreModule } from './core/core.module';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, SharedModule, CoreModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, CoreModule, SharedModule],
   providers: [
     StatusBar,
     SplashScreen,

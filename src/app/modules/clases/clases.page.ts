@@ -13,8 +13,6 @@ export class ClasesPage implements OnInit {
     user_role: 'admin'
   };
 
-  miBuscador: any;
-
   clases: any[] = [
     {
       name: 'Taekwondo',
