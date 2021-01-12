@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { ClaseComponent } from './components/clase/clase.component';
+import { CrearClaseComponent } from './components/crear-clase/crear-clase.component';
 
 @Component({
   selector: 'app-clases',
@@ -90,13 +91,19 @@ export class ClasesPage implements OnInit {
   }
 
   async abrirClase(noticia: any) {
-
     const modal = await this.modalController.create({
       component: ClaseComponent,
       componentProps: { noticia: noticia }
     });
     return await modal.present();
+  }
 
+  async nuevaClase(noticia: any) {
+    const modal = await this.modalController.create({
+      component: CrearClaseComponent,
+      componentProps: { noticia: noticia }
+    });
+    return await modal.present();
   }
 
 }
