@@ -1,7 +1,9 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { ClaseComponent } from './components/clase/clase.component';
 import { CrearClaseComponent } from './components/crear-clase/crear-clase.component';
+
 
 @Component({
   selector: 'app-clases',
@@ -50,7 +52,7 @@ export class ClasesPage implements OnInit {
 
   clasesEncontradas: any;
 
-  constructor(public modalController: ModalController) { }
+  constructor(public modalController: ModalController, private router: Router) { }
 
   ngOnInit() {
     this.clasesEncontradas = this.clases;
@@ -90,18 +92,18 @@ export class ClasesPage implements OnInit {
     return days_text;
   }
 
-  async abrirClase(noticia: any) {
+  async abrirClase(clase: any) {
     const modal = await this.modalController.create({
       component: ClaseComponent,
-      componentProps: { noticia: noticia }
+      componentProps: { clase: clase }
     });
     return await modal.present();
   }
 
-  async nuevaClase(noticia: any) {
+  async nuevaClase() {
     const modal = await this.modalController.create({
       component: CrearClaseComponent,
-      componentProps: { noticia: noticia }
+      componentProps: { }
     });
     return await modal.present();
   }

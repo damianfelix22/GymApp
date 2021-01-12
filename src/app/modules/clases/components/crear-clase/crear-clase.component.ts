@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-crear-clase',
@@ -7,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrearClaseComponent implements OnInit {
 
-  constructor() { }
+  constructor(public viewCtrl: ModalController) { }
 
   ngOnInit() {}
+
+  dismiss() {
+    this.viewCtrl.dismiss();
+    }
 
 }

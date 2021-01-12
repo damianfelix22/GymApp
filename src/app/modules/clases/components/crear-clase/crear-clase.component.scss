@@ -1,0 +1,57 @@
+header{
+    padding-top: 20px;
+    background-color: white;
+    align-items: flex-end;
+    text-align: center;
+}
+
+#icon{
+    padding: 15px;
+    position: absolute;
+    align-self: flex-end;
+    zoom: 1.5;
+}
+
+#title{
+    color: #00bb70;
+    font-size: 24px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+#card{
+    height: 40px;
+    width: 100%;
+    background-color: white;
+    border-radius: 0 0 50px 50px;
+    justify-content: center;
+    text-align: center;
+}
+
+#main{
+    --background: #00bb70;
+}
+
+#content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#card-div{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+#clase{
+    border-radius: 15px;
+    width: 80%;
+}
+
+#searchbar{
+    width: 90%;
+    --border-radius: 35px;
+    --box-shadow: 0px;
+}
