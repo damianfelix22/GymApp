@@ -11,7 +11,7 @@ export class ClasesPage implements OnInit {
     name: 'Pedro',
     lastname: 'Suarez',
     user_role: 'admin'
-  }
+  };
 
   miBuscador: any;
 
@@ -21,6 +21,7 @@ export class ClasesPage implements OnInit {
       start: '14:00',
       end: '16:00',
       instructor: 'Pablo',
+      days: ['lunes', 'jueves'],
       image: 'https://mundotaekwondo.com/wp-content/uploads/2019/05/britanico-peligroso.jpg',
       description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi assumenda a 
       dignissimos.`,
@@ -30,6 +31,7 @@ export class ClasesPage implements OnInit {
       start: '14:00',
       end: '16:00',
       instructor: 'Roberto',
+      days: ['martes', 'viernes'],
       image: 'https://www.hola.com/imagenes/estar-bien/20190206136791/ventajas-inconvenientes-spinning-cs/0-643-792/proscontraspinning-t.jpg',
       description: `Lorem ipsum dolor sit amet consectetur adipisicing elit.`,
     },
@@ -38,11 +40,12 @@ export class ClasesPage implements OnInit {
       start: '14:00',
       end: '16:00',
       instructor: 'Maria',
+      days: ['lunes', 'miercoles', 'viernes'],
       image: 'https://www.wellandgood.com/wp-content/uploads/2018/11/Stocksy-crossfit-friends-BONNINSTUDIO.jpg',
       description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi assumenda a 
       dignissimos nobis voluptatibus obcaecati sit explicabo, eius voluptatum.`,
     },
-  ]
+  ];
 
   clasesEncontradas: any;
 
@@ -68,10 +71,22 @@ export class ClasesPage implements OnInit {
       if (instructor.indexOf(ev.srcElement.value.toLowerCase()) != -1)
         this.clasesEncontradas.push(this.clases[i]);
     }
+
+    if (!ev.srcElement.value) {
+      this.clasesEncontradas = this.clases;
+    }
   }
 
   cancelarBusqueda() {
     this.clasesEncontradas = this.clases;
+  }
+
+  dias(days: any) {
+    let days_text = days[0];
+    for (let i = 1; i < days.length; i++){
+      days_text += "-" + days[i];
+    }
+    return days_text;
   }
 
 }
