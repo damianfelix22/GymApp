@@ -25,8 +25,8 @@
     </ion-searchbar>
 
     <!-- classes' cards -->
-    <div id="card-div">
-      <ion-card mode="ios" *ngFor="let clase of clasesEncontradas" id="clase">
+    <div id="card-div" *ngFor="let clase of clasesEncontradas">
+      <ion-card mode="ios" id="clase" (click)="abrirClase(clase)">
         <ion-img src="{{clase.image}}"></ion-img>
         <ion-card-header>
           <ion-card-title>{{clase.name}}</ion-card-title>
