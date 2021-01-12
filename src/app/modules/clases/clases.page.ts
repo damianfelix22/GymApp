@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { ClaseComponent } from './components/clase/clase.component';
 
 @Component({
   selector: 'app-clases',
@@ -47,7 +49,7 @@ export class ClasesPage implements OnInit {
 
   clasesEncontradas: any;
 
-  constructor() { }
+  constructor(public modalController: ModalController) { }
 
   ngOnInit() {
     this.clasesEncontradas = this.clases;
@@ -85,6 +87,16 @@ export class ClasesPage implements OnInit {
       days_text += "-" + days[i];
     }
     return days_text;
+  }
+
+  async abrirClase(noticia: any) {
+
+    const modal = await this.modalController.create({
+      component: ClaseComponent,
+      componentProps: { noticia: noticia }
+    });
+    return await modal.present();
+
   }
 
 }
