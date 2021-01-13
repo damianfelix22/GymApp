@@ -1,0 +1,44 @@
+header{
+    padding-top: 20px;
+    background-color: white;
+    align-items: flex-end;
+    text-align: center;
+}
+
+#icon{
+    padding: 15px;
+    position: absolute;
+    align-self: flex-end;
+    zoom: 1.5;
+}
+
+#title{
+    color: #00bb70;
+    font-size: 24px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+#card{
+    height: 40px;
+    width: 100%;
+    background-color: white;
+    border-radius: 0 0 50px 50px;
+    justify-content: center;
+    text-align: center;
+}
+
+#main{
+    --background: #00bb70;
+    width: 100%;
+}
+
+.button{
+    height: 40px;
+    --border-radius: 25px;
+    --background: white;
+    --box-shadow: 0;
+    color:#00bb70;
+    font-weight: bold;
+    font-size: 13px;
+}

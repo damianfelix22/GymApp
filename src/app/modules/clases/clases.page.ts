@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { ClaseComponent } from './components/clase/clase.component';
 import { CrearClaseComponent } from './components/crear-clase/crear-clase.component';
+import { ReservasComponent } from './components/reservas/reservas.component';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class ClasesPage implements OnInit {
   user: any = {
     name: 'Pedro',
     lastname: 'Suarez',
-    user_role: 'admin'
+    user_role: 'alumno'
   };
 
   clases: any[] = [
@@ -114,7 +115,11 @@ export class ClasesPage implements OnInit {
   }
 
   async reservar() {
-    console.log("pantalla reservar clase")
+    const modal = await this.modalController.create({
+      component: ReservasComponent,
+      componentProps: { user: this.user }
+    });
+    return await modal.present();
   }
 
 }
