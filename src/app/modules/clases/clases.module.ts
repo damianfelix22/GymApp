@@ -1,3 +1,4 @@
+import { CrearClaseComponent } from './components/crear-clase/crear-clase.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -6,6 +7,7 @@ import { ClasesPageRoutingModule } from './clases-routing.module';
 import { ClasesPage } from './clases.page';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { CoreModule } from 'src/app/core/core.module';
+import { ClaseComponent } from './components/clase/clase.component';
 
 @NgModule({
   imports: [
@@ -16,6 +18,6 @@ import { CoreModule } from 'src/app/core/core.module';
     SharedModule,
     CoreModule
   ],
-  declarations: [ClasesPage]
+  declarations: [ClasesPage, ClaseComponent, CrearClaseComponent]
 })
 export class ClasesPageModule {}
