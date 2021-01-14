@@ -46,10 +46,17 @@
 
   </div>
 
-  <!-- fab placed to the bottom end -->
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <!-- botón instructor: crear nueva clase -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="user.user_role == 'admin'" >
     <ion-fab-button color="light" (click)="nuevaClase()">
       <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <!-- botón alumno: reservar una clase -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="user.user_role == 'alumno'" >
+    <ion-fab-button color="light" (click)="reservar()">
+      <ion-icon name="calendar-outline"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 

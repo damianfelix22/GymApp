@@ -1,0 +1,46 @@
+<header>
+  <ion-text id="title">Reservar una Clase</ion-text>
+</header>
+
+<ion-icon id="icon" name="close" (click)="dismiss()"></ion-icon>
+
+<ion-content id="main">
+  <div style="background-color: #00bb70;"><div id="card"></div></div>
+
+  <div id="content1">
+
+    <ion-row style="height: 15px;"></ion-row>
+
+    <ion-label id="title2">Seleccione una clase</ion-label>
+
+    <ion-item>
+      <ion-label>Clases del día:</ion-label>
+      <ion-select interface="action-sheet" (ionChange)="select($event)" value="{{clases[0].name}}">
+        <ion-select-option *ngFor="let clase of clases" [value]="(clase.name)">{{clase.name}} ({{clase.start}} - {{clase.end}})</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <div id="card-div">
+      <ion-card mode="ios" id="clase">
+        <ion-img src="{{clase_sel.image}}"></ion-img>
+        <ion-card-header>
+          <ion-card-title>{{clase_sel.name}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-text>{{clase_sel.description}}</ion-text><br>
+          <ion-row>
+            <ion-col size="6"><strong>{{clase_sel.start}} - {{clase_sel.end}}</strong></ion-col>
+            <ion-col size="6"><strong>{{clase_sel.instructor}}</strong></ion-col>
+          </ion-row>
+          <ion-row><ion-col size="12"><strong>dias de la clase</strong></ion-col></ion-row>
+        </ion-card-content>
+      </ion-card>
+    </div> 
+
+    <ion-button class="button" (click)="reservar()">Reservar Clase</ion-button>
+
+    <ion-row style="height: 25px;"></ion-row>
+
+  </div>
+
+</ion-content>

@@ -62,18 +62,15 @@ ion-item{
     width: 90%;
     justify-content: center;
     text-align: left;
-    padding-top: 10px;
 }
 
 .item2{
-    --background: #4ddda4;
-    --border-radius: 30px;
+    --background: #00bb70;
     color: white;
     font-weight: bold;
     width: 90%;
     justify-content: center;
     text-align: center;
-    padding-top: 10px;
 }
 
 .area{
@@ -107,4 +104,15 @@ form{
 
 .input-text{
     text-align: center;
+}
+
+#card-div{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+#clase{
+    border-radius: 15px;
+    width: 80%;
 }

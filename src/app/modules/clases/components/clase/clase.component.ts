@@ -11,13 +11,33 @@ export class ClaseComponent implements OnInit {
 
   clase: any;
 
+  user: any;
+
   constructor(public viewCtrl: ModalController, public navParams: NavParams) {
     this.clase = this.navParams.get('clase');
+    this.user = this.navParams.get('user');
   }
 
   ngOnInit() {}
 
   dismiss() {
     this.viewCtrl.dismiss();
+  }
+
+  dias(days: any) {
+    let days_text = '- ';
+    let dia = '';
+    for (let i = 0; i < days.length; i++){
+      switch (days[i]) {
+        case 'lu': dia = 'lunes'; break;
+        case 'ma': dia = 'martes'; break;
+        case 'mi': dia = 'miercoles'; break;
+        case 'ju': dia = 'jueves'; break;
+        case 'vi': dia = 'viernes'; break;
+      }
+      days_text += dia + ' - ';
     }
+    return days_text;
+  }
+
 }

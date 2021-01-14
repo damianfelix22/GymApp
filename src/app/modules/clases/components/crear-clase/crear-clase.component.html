@@ -5,14 +5,57 @@
 <ion-icon id="icon" name="close" (click)="dismiss()"></ion-icon>
 
 <ion-content id="main">
-
   <div style="background-color: #00bb70;"><div id="card"></div></div>
 
-  <div id="content">
+  <div id="content1" *ngIf="user.user_role == 'admin'">
 
     <ion-row style="height: 15px;"></ion-row>
 
-    
+    <form (ngSubmit)="onSubmit()">
+      <ion-item>
+        <ion-label color="light">Nombre de la clase:</ion-label>
+        <ion-input type="text" autocomplete="name" placeholder="ingresar nombre" class="input-text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Días: </ion-label>
+        <ion-select multiple="true">
+          <ion-select-option value="lu">Lunes</ion-select-option>
+          <ion-select-option value="ma">Martes</ion-select-option>
+          <ion-select-option value="mi">Miércoles</ion-select-option>
+          <ion-select-option value="ju">Jueves</ion-select-option>
+          <ion-select-option value="vi">Viernes</ion-select-option>
+          <ion-select-option value="sa">Sábado</ion-select-option>
+          <ion-select-option value="do">Domingo</ion-select-option>
+        </ion-select>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Comienza:</ion-label>
+        <ion-datetime displayFormat="HH:mm" value="00:00"></ion-datetime>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Finaliza:</ion-label>
+        <ion-datetime displayFormat="HH:mm" value="01:00"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="light">Instructor:</ion-label>
+        <ion-input type="text" class="input-text" placeholder="ingresar nombre"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="light" style="padding-right: 15px;">Descripción:</ion-label>
+        <ion-textarea class="area" rows="6" placeholder="descripción breve"></ion-textarea>
+      </ion-item>
+
+      <ion-row style="height: 20px;"></ion-row>
+
+      <ion-button class="button" type="submit">Guardar</ion-button>
+    </form>
+
+    <ion-row style="height: 25px;"></ion-row>
 
   </div>
 
