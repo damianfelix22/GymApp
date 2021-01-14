@@ -29,8 +29,9 @@
           <ion-item>
             <ion-label>Estado</ion-label>
             <ion-select>
-              <ion-select-option value="f">Activo</ion-select-option>
-              <ion-select-option value="m">Inactivo</ion-select-option>
+              <ion-select-option value="active">Activo</ion-select-option>
+              <ion-select-option value="inactive">Inactivo</ion-select-option>
+              <ion-select-option value="all">Todos</ion-select-option>
             </ion-select>
           </ion-item>
         </ion-col>
@@ -48,7 +49,7 @@
     
 
     <ion-list class="lista">
-      <ion-item-sliding color="light" *ngFor="let item of users" >
+      <ion-item-sliding color="light" *ngFor="let item of alumnosEncontrados" >
         <ion-item>
           <ion-avatar slot="start">
             <img src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg">

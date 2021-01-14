@@ -13,6 +13,8 @@ export class AlumnosPage implements OnInit {
     user_role: 'admin'
   }
 
+  alumnosEncontrados: any;
+
   users: any = [
     {
       name: "Lucas",
@@ -44,6 +46,24 @@ export class AlumnosPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.alumnosEncontrados = this.users;
+  }
+
+  buscar(ev: any) {
+    this.alumnosEncontrados = [];
+    let clase = "";
+    for (let i = 0; i < this.users.length; i++){
+      clase = this.users[i].name.toLowerCase();
+      if (clase.indexOf(ev.srcElement.value.toLowerCase()) != -1)
+        this.alumnosEncontrados.push(this.users[i]);
+    }
+    if (!ev.srcElement.value) {
+      this.alumnosEncontrados = this.users;
+    }
+  }
+
+  cancelarBusqueda() {
+    this.alumnosEncontrados = this.users;
   }
 
 }
