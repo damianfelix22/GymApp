@@ -13,8 +13,32 @@ export class AlumnosPage implements OnInit {
     user_role: 'admin'
   }
 
-  users: any[] = ["Lucas Felix", "Damian Felix", "Felipe Miguel", "Leo Ortega", "Juancito Perez", "Pablo Diaz", "Negro Ferreyra", "Roberto Rodriguez", "Martin Suarez", "Carlos Marin",
-  "Marcos Pereyra", "Román Riquelme", "Carlos Tevez", "Miguel Russo"];
+  users: any = [
+    {
+      name: "Lucas",
+      lastname: "Felix",
+      days_left: 0,
+      avatar: 'https://ionicframework.com/docs/demos/api/avatar/avatar.svg'
+    },
+    {
+      name: "Felipe",
+      lastname: "Miguel",
+      days_left: 26,
+      avatar: 'https://ionicframework.com/docs/demos/api/avatar/avatar.svg'
+    },
+    {
+      name: "Carlos",
+      lastname: "Tevez",
+      days_left: 22,
+      avatar: 'https://ionicframework.com/docs/demos/api/avatar/avatar.svg'
+    },
+    {
+      name: "Ramón",
+      lastname: "Avila",
+      days_left: 8,
+      avatar: 'https://ionicframework.com/docs/demos/api/avatar/avatar.svg'
+    }
+  ]
 
 
   constructor() { }
