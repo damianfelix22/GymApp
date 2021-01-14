@@ -13,6 +13,10 @@ export class AlumnosPage implements OnInit {
     user_role: 'admin'
   }
 
+  users: any[] = ["Lucas Felix", "Damian Felix", "Felipe Miguel", "Leo Ortega", "Juancito Perez", "Pablo Diaz", "Negro Ferreyra", "Roberto Rodriguez", "Martin Suarez", "Carlos Marin",
+  "Marcos Pereyra", "Román Riquelme", "Carlos Tevez", "Miguel Russo"];
+
+
   constructor() { }
 
   ngOnInit() {

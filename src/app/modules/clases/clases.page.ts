@@ -16,7 +16,7 @@ export class ClasesPage implements OnInit {
   user: any = {
     name: 'Pedro',
     lastname: 'Suarez',
-    user_role: 'alumno'
+    user_role: 'admin'
   };
 
   clases: any[] = [

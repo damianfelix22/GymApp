@@ -8,6 +8,7 @@ import { ClasesPage } from './clases.page';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { CoreModule } from 'src/app/core/core.module';
 import { ClaseComponent } from './components/clase/clase.component';
+import { ReservasComponent } from './components/reservas/reservas.component';
 
 @NgModule({
   imports: [
@@ -18,6 +19,6 @@ import { ClaseComponent } from './components/clase/clase.component';
     SharedModule,
     CoreModule
   ],
-  declarations: [ClasesPage, ClaseComponent, CrearClaseComponent]
+  declarations: [ClasesPage, ClaseComponent, CrearClaseComponent, ReservasComponent]
 })
 export class ClasesPageModule {}
