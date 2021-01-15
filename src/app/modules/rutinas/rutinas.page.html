@@ -1,9 +1,64 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>rutinas</ion-title>
-  </ion-toolbar>
-</ion-header>
+<header>
+  <app-avatar></app-avatar>
+  <ion-menu-button></ion-menu-button>
+</header>
 
-<ion-content>
+<ion-content id="main">
+
+  <div style="background-color: #00bb70;">
+    <div id="card">
+      <ion-text id="title">Clases</ion-text>
+    </div>
+  </div>
+
+  <div id="content">
+
+    <ion-row style="height: 15px;"></ion-row>
+
+    <!-- filtrar rutinas por clase -->
+    <ion-item>
+      <ion-label>Clases:</ion-label>
+      <ion-select class="select" placeholder="Seleccionar">
+        <ion-select-option>Crossfit</ion-select-option>
+        <ion-select-option>Taekwondo</ion-select-option>
+        <ion-select-option>Spinning</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!-- barra de búsqueda -->
+    <ion-searchbar
+      id="searchbar" 
+      debounce="500" 
+      placeholder="buscar rutinas" 
+      (ionInput)="buscar($event)" 
+      (ionCancel)="cancelarBusqueda($event)">
+    </ion-searchbar>
+
+    <!-- tarjetas de clases -->
+    <div id="rutinas-content" >
+      <div id="rutina-div" *ngFor="let rutina of rutinasEncontradas">
+        <ion-card mode="ios" id="rutina" (click)="abrirRutina(rutina)">
+          <ion-card-header>
+            <ion-card-title>{{rutina.title}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-text>{{rutina.description}}</ion-text><br>
+            <ion-chip>{{rutina.class}} {{rutina.date}}</ion-chip>
+          </ion-card-content>
+        </ion-card>      
+      </div> 
+    </div>
+    
+
+    <ion-row style="height: 20px;"></ion-row>
+
+  </div>
+
+  <!-- botón instructor: crear nueva clase -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="user.user_role == 'admin' || user.user_role == 'instructor'" >
+    <ion-fab-button color="light" (click)="nuevaRutina()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
 </ion-content>
