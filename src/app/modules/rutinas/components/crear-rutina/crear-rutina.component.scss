@@ -1,0 +1,109 @@
+header{
+    padding-top: 20px;
+    background-color: white;
+    align-items: flex-end;
+    text-align: center;
+}
+
+#icon{
+    padding: 15px;
+    position: absolute;
+    align-self: flex-end;
+    zoom: 1.5;
+}
+
+#title{
+    color: #00bb70;
+    font-size: 24px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+#title2{
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+#card{
+    height: 40px;
+    width: 100%;
+    background-color: white;
+    border-radius: 0 0 50px 50px;
+    justify-content: center;
+    text-align: center;
+}
+
+#main{
+    --background: #00bb70;
+}
+
+#content1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+#imagen{
+    border-radius: 15px;
+    width: 80%;
+}
+
+ion-item{
+    --background: #4ddda4;
+    --border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    width: 90%;
+    justify-content: center;
+    text-align: left;
+    padding-top: 10px;
+}
+
+.item2{
+    --background: #4ddda4;
+    --border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    width: 90%;
+    justify-content: center;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.area{
+    height: 22em;
+    padding: 10px;
+    border-radius: 25px;
+    border: 0ch;
+    background-color: #4ddda4;
+    color: white;
+    text-align: justify;
+}
+
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.button{
+    height: 40px;
+    --border-radius: 25px;
+    --background: white;
+    --box-shadow: 0;
+    color:#00bb70;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.input-text{
+    text-align: center;
+}
