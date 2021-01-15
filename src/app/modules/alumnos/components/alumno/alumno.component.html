@@ -1,0 +1,97 @@
+<header>
+  <ion-text id="title">{{alumno.name}} {{alumno.lastname}}</ion-text>
+</header>
+
+<ion-icon id="icon" name="close" (click)="dismiss()"></ion-icon>
+
+<ion-content id="main">
+  <div style="background-color: #00bb70;"><div id="card"></div></div>
+
+  <!-- VISTA DE ADMINISTRADOR -->
+
+  <div id="content1" *ngIf="user.user_role == 'admin'">
+
+    <ion-row style="height: 15px;"></ion-row>
+
+    <img id="avatar" src="{{alumno.avatar}}">
+
+    <ion-row style="height: 10px;"></ion-row> 
+
+    <form (ngSubmit)="onSubmit()">
+      <ion-item>
+        <ion-label color="light">Nombre:</ion-label>
+        <ion-input type="text" autocomplete="name" class="input-text" value="{{alumno.name}}"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="light">Apellido:</ion-label>
+        <ion-input type="text" autocomplete="name" class="input-text" value="{{alumno.lastname}}"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Clases autorizadas:</ion-label>
+        <ion-select interface="action-sheet" (ionChange)="select($event)"  multiple="true" [value]="(clases)">
+          <ion-select-option *ngFor="let clase of clases" value="{{clase}}">{{clase}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Fecha de Inicio:</ion-label>
+        <ion-datetime displayFormat="DD-MM-YYYY" value="{{alumno.startDate}}"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Fecha de Vencimiento:</ion-label>
+        <ion-datetime displayFormat="DD-MM-YYYY" value="{{alumno.expirationDate}}"></ion-datetime>
+      </ion-item>
+
+      <ion-row style="height: 20px;"></ion-row>
+
+      <ion-button class="button" type="submit">Guardar</ion-button>
+    </form>
+
+    <ion-row style="height: 25px;"></ion-row>
+
+  </div>
+
+  <!-- VISTA DE INSTRUCTOR -->
+
+  <div id="content1" *ngIf="user.user_role == 'alumno'">
+
+    <ion-row style="height: 15px;"></ion-row>
+
+    <img id="avatar" src="{{alumno.avatar}}">
+
+    <ion-row style="height: 10px;"></ion-row> 
+
+    <div id="items-div">
+      <ion-item class="item2">
+        <ion-label color="light">Nombre: {{alumno.name}}</ion-label>
+      </ion-item>
+
+      <ion-item class="item2">
+        <ion-label color="light">Apellido: {{alumno.lastname}}</ion-label>
+      </ion-item>
+
+      <ion-item class="item2">
+        <ion-label>Clases autorizadas:</ion-label>
+        <ion-select multiple="true" [value]="(clases)">
+          <ion-select-option *ngFor="let clase of clases" value="{{clase}}" disabled="true">{{clase}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item class="item2">
+        <ion-label>Fecha de Inicio: {{alumno.startDate}}</ion-label>
+      </ion-item>
+
+      <ion-item class="item2">
+        <ion-label>Fecha de Vencimiento: {{alumno.expirationDate}}</ion-label>
+      </ion-item>
+
+    </div>
+
+    <ion-row style="height: 25px;"></ion-row>
+
+  </div>
+
+</ion-content>

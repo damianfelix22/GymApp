@@ -7,7 +7,7 @@
 
   <div style="background-color: #00bb70;">
     <div id="card">
-      <ion-text id="title">Clases</ion-text>
+      <ion-text id="title">Alumnos</ion-text>
     </div>
   </div>
 
@@ -44,22 +44,18 @@
         (ionCancel)="cancelarBusqueda($event)">
       </ion-searchbar>
     </div>
-    
-
-    
 
     <ion-list class="lista">
-      <ion-item-sliding color="light" *ngFor="let item of alumnosEncontrados" >
-        <ion-item>
+      <ion-item-sliding color="light" *ngFor="let item of alumnosEncontrados">
+        <ion-item  (click)="alumno(item)">
           <ion-avatar slot="start">
-            <img src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg">
+            <img src="{{item.avatar}}">
           </ion-avatar>
           <ion-label>{{item.name}} {{item.lastname}}</ion-label>
-          <ion-badge>{{item.days_left}}</ion-badge>
+          <ion-badge>{{diasVencimiento(item)}}</ion-badge>
         </ion-item>
         <ion-item-options side="end" *ngIf="user.user_role == 'admin'">
-          <ion-item-option><ion-icon style="zoom: 1.5;" name="create" color="light"></ion-icon></ion-item-option>
-          <ion-item-option><ion-icon style="zoom: 1.5;" name="trash" color="light"></ion-icon></ion-item-option>
+          <ion-item-option (click)="eliminarAlumno(item)"><ion-icon style="zoom: 1.5;" name="trash" color="light"></ion-icon></ion-item-option>
         </ion-item-options>
       </ion-item-sliding>
 
@@ -70,7 +66,7 @@
   <ion-row style="height: 20px;"></ion-row>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="user.user_role == 'admin'">
-    <ion-fab-button color="light">
+    <ion-fab-button color="light" (click)="nuevoAlumno()">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
