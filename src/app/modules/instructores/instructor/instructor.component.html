@@ -32,6 +32,14 @@
         <ion-input type="number" class="input-text" value="{{instructor.age}}"></ion-input>
       </ion-item>
 
+      <ion-item>
+        <ion-label color="light">Estado:</ion-label>
+        <ion-select value="{{instructor.state}}">
+          <ion-select-option value="activo">Activo</ion-select-option>
+          <ion-select-option value="inactivo">Inactivo</ion-select-option>
+        </ion-select>
+      </ion-item>
+
       <ion-row style="height: 20px;"></ion-row>
 
       <ion-button class="button" type="submit">Guardar</ion-button>

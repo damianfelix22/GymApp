@@ -46,7 +46,7 @@
       </ion-searchbar>
     </div>
 
-    <!-- LISTA DE LOS ALUMNOS ENCONTRADOS -->
+    <!-- LISTA DE LOS INSTRUCTORES ENCONTRADOS -->
     <ion-list class="lista">
       <ion-item-sliding color="light" *ngFor="let item of profesEncontrados">
         <ion-item  (click)="instructor(item)">
@@ -54,6 +54,7 @@
             <img src="{{item.avatar}}">
           </ion-avatar>
           <ion-label>{{item.name}} {{item.lastname}}</ion-label>
+          <ion-badge>{{item.state}}</ion-badge>
         </ion-item>
         <ion-item-options side="end" *ngIf="user.user_role == 'admin'">
           <ion-item-option (click)="eliminarInstructor(item)"><ion-icon style="zoom: 1.5;" name="trash" color="light"></ion-icon></ion-item-option>

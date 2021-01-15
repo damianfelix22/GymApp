@@ -18,34 +18,38 @@ export class InstructoresPage implements OnInit {
     user_role: 'admin'
   }
 
-  //Variable auxiliar para alumnos encontrados por la búsqueda o filtrado
+  //Variable auxiliar para instructores encontrados por la búsqueda o filtrado
   profesEncontrados: any;
 
-  //alumnos
+  //instructores
   profes: any = [
     {
       name: "Lucas",
       lastname: "Felix",
       age: 27,
       avatar: 'https://ionicframework.com/docs/demos/api/avatar/avatar.svg',
+      state: 'activo'
     },
     {
       name: "Felipe",
       lastname: "Miguel",
       age: 24,
       avatar: 'https://ionicframework.com/docs/demos/api/avatar/avatar.svg',
+      state: 'inactivo'
     },
     {
       name: "Carlos",
       lastname: "Tevez",
       age: 22,
       avatar: 'https://ionicframework.com/docs/demos/api/avatar/avatar.svg',
+      state: 'activo'
     },
     {
       name: "Ramón",
       lastname: "Avila",
       age: 35,
       avatar: 'https://ionicframework.com/docs/demos/api/avatar/avatar.svg',
+      state: 'inactivo'
     }
   ]
 
@@ -56,7 +60,7 @@ export class InstructoresPage implements OnInit {
     this.profesEncontrados = this.profes;
   }
 
-  //Busca alumnos por nombre o apellido
+  //Busca instructores por nombre o apellido
   buscar(ev: any) {
     this.profesEncontrados = [];
     let profe = "";
@@ -77,12 +81,12 @@ export class InstructoresPage implements OnInit {
     }
   }
 
-  //Cancela búsqueda (muestra todos los alumnos)
+  //Cancela búsqueda (muestra todos los instructores)
   cancelarBusqueda() {
     this.profesEncontrados = this.profes;
   }
 
-  //Abre pantalla para crear nuevo alumno (solo admin)
+  //Abre pantalla para crear nuevo instructor
   async nuevoInstructor() {
     const modal = await this.modalController.create({
       component: CrearInstructorComponent,
@@ -91,7 +95,7 @@ export class InstructoresPage implements OnInit {
     return await modal.present();
   }
 
-  //Abre pantalla para ver datos del alumno (admin/instructor)
+  //Abre pantalla para ver datos del instructor
   async instructor(instructor:any) {
     const modal = await this.modalController.create({
       component: InstructorComponent,
@@ -100,7 +104,7 @@ export class InstructoresPage implements OnInit {
     return await modal.present();
   }
 
-  //Elimina un alumno (solo admin)
+  //Elimina un instructor
   eliminarInstructor(){
     confirm("estás seguro?");
   }
