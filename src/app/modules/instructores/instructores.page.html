@@ -1,9 +1,76 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>instructores</ion-title>
-  </ion-toolbar>
-</ion-header>
+<header>
+  <app-avatar></app-avatar>
+  <ion-menu-button></ion-menu-button>
+</header>
 
-<ion-content>
+<ion-content id="main">
+
+  <div style="background-color: #00bb70;">
+    <div id="card">
+      <ion-text id="title">Instructores</ion-text>
+    </div>
+  </div>
+
+  <div id="content">
+
+    <!-- SECCIÓN DE FILTRADO Y BÚSQUEDA DE INSTRUCTORES -->
+    <div id="searchbar-div">
+      <ion-row style="width: 100%;">
+        <ion-col size="6">
+          <ion-item>
+            <ion-label>Clase</ion-label>
+            <ion-select>
+              <ion-select-option value="f">Crossfit</ion-select-option>
+              <ion-select-option value="m">Funcional</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size="6">
+          <ion-item>
+            <ion-label>Estado</ion-label>
+            <ion-select>
+              <ion-select-option value="active">Activo</ion-select-option>
+              <ion-select-option value="inactive">Inactivo</ion-select-option>
+              <ion-select-option value="all">Todos</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-searchbar
+        debounce="500" 
+        placeholder="buscar instructor" 
+        (ionInput)="buscar($event)" 
+        (ionCancel)="cancelarBusqueda($event)">
+      </ion-searchbar>
+    </div>
+
+    <!-- LISTA DE LOS ALUMNOS ENCONTRADOS -->
+    <ion-list class="lista">
+      <ion-item-sliding color="light" *ngFor="let item of profesEncontrados">
+        <ion-item  (click)="instructor(item)">
+          <ion-avatar slot="start">
+            <img src="{{item.avatar}}">
+          </ion-avatar>
+          <ion-label>{{item.name}} {{item.lastname}}</ion-label>
+        </ion-item>
+        <ion-item-options side="end" *ngIf="user.user_role == 'admin'">
+          <ion-item-option (click)="eliminarInstructor(item)"><ion-icon style="zoom: 1.5;" name="trash" color="light"></ion-icon></ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+
+      <ion-row style="height: 50px;"></ion-row>
+    </ion-list>
+  </div>
+
+  <ion-row style="height: 20px;"></ion-row>
+
+  <!-- BOTÓN PARA CREAR NUEVO INSTRUCTOR (SOLO ADMIN) -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="user.user_role == 'admin'">
+    <ion-fab-button color="light" (click)="nuevoInstructor()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
 </ion-content>
