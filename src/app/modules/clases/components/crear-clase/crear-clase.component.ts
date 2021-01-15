@@ -12,6 +12,7 @@ export class CrearClaseComponent implements OnInit {
 
   ngOnInit() {}
 
+  //Cierra la pantalla actual (botón superior derecho)
   dismiss() {
     this.viewCtrl.dismiss();
     }

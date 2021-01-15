@@ -15,7 +15,7 @@
 
     <ion-row style="height: 15px;"></ion-row>
 
-    <!-- search bar -->
+    <!-- barra de búsqueda -->
     <ion-searchbar
       id="searchbar" 
       debounce="500" 
@@ -24,7 +24,7 @@
       (ionCancel)="cancelarBusqueda($event)">
     </ion-searchbar>
 
-    <!-- classes' cards -->
+    <!-- tarjetas de clases -->
     <div id="card-div" *ngFor="let clase of clasesEncontradas">
       <ion-card mode="ios" id="clase" (click)="abrirClase(clase)">
         <ion-img src="{{clase.image}}"></ion-img>

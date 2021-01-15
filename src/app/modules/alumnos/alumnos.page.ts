@@ -11,14 +11,17 @@ import { AlumnoComponent } from './components/alumno/alumno.component';
 })
 export class AlumnosPage implements OnInit {
 
+  //Usuario que está usando la app
   user: any = {
     name: 'Pedro',
     lastname: 'Suarez',
     user_role: 'admin'
   }
 
+  //Variable auxiliar para alumnos encontrados por la búsqueda o filtrado
   alumnosEncontrados: any;
 
+  //alumnos
   users: any = [
     {
       name: "Lucas",
@@ -65,6 +68,7 @@ export class AlumnosPage implements OnInit {
     this.alumnosEncontrados = this.users;
   }
 
+  //Busca alumnos por nombre o apellido
   buscar(ev: any) {
     this.alumnosEncontrados = [];
     let alumno = "";
@@ -85,10 +89,12 @@ export class AlumnosPage implements OnInit {
     }
   }
 
+  //Cancela búsqueda (muestra todos los alumnos)
   cancelarBusqueda() {
     this.alumnosEncontrados = this.users;
   }
 
+  //Abre pantalla para crear nuevo alumno (solo admin)
   async nuevoAlumno() {
     const modal = await this.modalController.create({
       component: CrearAlumnoComponent,
@@ -97,6 +103,7 @@ export class AlumnosPage implements OnInit {
     return await modal.present();
   }
 
+  //Abre pantalla para ver datos del alumno (admin/instructor)
   async alumno(alumno:any) {
     const modal = await this.modalController.create({
       component: AlumnoComponent,
@@ -105,10 +112,13 @@ export class AlumnosPage implements OnInit {
     return await modal.present();
   }
 
+  //Elimina un alumno (solo admin)
   eliminarAlumno(){
     confirm("estás seguro?");
   }
 
+  //Calcula los días que faltan para el vencimiento de la matrícula de cada alumno
+  //según la fecha actual. Los muestra a la derecha del nombre del alumno
   diasVencimiento(alumno: any){
 
     let year = (new Date()).getFullYear();

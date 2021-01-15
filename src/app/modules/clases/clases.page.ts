@@ -13,12 +13,14 @@ import { ReservasComponent } from './components/reservas/reservas.component';
 })
 export class ClasesPage implements OnInit {
 
+  //Usuario que está usando la aplicación
   user: any = {
     name: 'Pedro',
     lastname: 'Suarez',
-    user_role: 'admin'
+    user_role: 'admin' //cambiar este valor por 'admin', 'alumno' o 'instructor'
   };
 
+  //Clases que puede ver ese usuario (dependiendo su rol)
   clases: any[] = [
     {
       name: 'Taekwondo',
@@ -49,6 +51,7 @@ export class ClasesPage implements OnInit {
     },
   ];
 
+  //Variable auxiliar usada para buscar clases
   clasesEncontradas: any;
 
   constructor(public modalController: ModalController, private router: Router) { }
@@ -57,32 +60,32 @@ export class ClasesPage implements OnInit {
     this.clasesEncontradas = this.clases;
   }
 
+  //Busca clases por nombre o instructor segun lo ingresado en la barra de búsqueda
   buscar(ev: any) {
     this.clasesEncontradas = [];
     let clase = "";
     let instructor = "";
-    //console.log(text.indexOf(ev.srcElement.value));
     for (let i = 0; i < this.clases.length; i++){
       clase = this.clases[i].name.toLowerCase();
       if (clase.indexOf(ev.srcElement.value.toLowerCase()) != -1)
         this.clasesEncontradas.push(this.clases[i]);
     }
-
     for (let i = 0; i < this.clases.length; i++){
       instructor = this.clases[i].instructor.toLowerCase();
       if (instructor.indexOf(ev.srcElement.value.toLowerCase()) != -1)
         this.clasesEncontradas.push(this.clases[i]);
     }
-
     if (!ev.srcElement.value) {
       this.clasesEncontradas = this.clases;
     }
   }
 
+  //Cancela la búsqueda (muestra todas las clases)
   cancelarBusqueda() {
     this.clasesEncontradas = this.clases;
   }
 
+  //Muestra los dias que se dicta una clase
   dias(days: any) {
     let days_text = '- ';
     let dia = '';
@@ -98,6 +101,8 @@ export class ClasesPage implements OnInit {
     }
     return days_text;
   }
+
+  //Abre la información de una clase al tocar sobre ella (alumno/admin/instructor)
   async abrirClase(clase: any) {
     const modal = await this.modalController.create({
       component: ClaseComponent,
@@ -106,6 +111,7 @@ export class ClasesPage implements OnInit {
     return await modal.present();
   }
 
+  //Abre pantalla para crear una nueva clase (solo para admin)
   async nuevaClase() {
     const modal = await this.modalController.create({
       component: CrearClaseComponent,
@@ -114,6 +120,7 @@ export class ClasesPage implements OnInit {
     return await modal.present();
   }
 
+  //Abre pantalla para reservar una clase (solo para alumno)
   async reservar() {
     const modal = await this.modalController.create({
       component: ReservasComponent,

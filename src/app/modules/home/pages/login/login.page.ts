@@ -1,4 +1,4 @@
-import { Router, Routes } from '@angular/router';
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -15,6 +15,10 @@ export class LoginPage implements OnInit {
 
   onSubmit() {
     this.router.navigateByUrl('menu');
+  }
+
+  atras(){
+    this.router.navigateByUrl('home');
   }
 
 }

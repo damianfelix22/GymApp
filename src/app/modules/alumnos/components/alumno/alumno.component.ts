@@ -9,8 +9,12 @@ import { NavParams } from '@ionic/angular';
 })
 export class AlumnoComponent implements OnInit {
 
+  //Usuario que está usando la app
   user: any;
+
+  //Recibe los datos del alumno que se muestra 
   alumno: any;
+  
   clases: any;
 
   constructor(public viewCtrl: ModalController, public navParams: NavParams) {
@@ -22,6 +26,7 @@ export class AlumnoComponent implements OnInit {
     this.clases = this.alumno.classes;
   }
 
+  //Cierra la pantalla actual
   dismiss() {
     this.viewCtrl.dismiss();
   }

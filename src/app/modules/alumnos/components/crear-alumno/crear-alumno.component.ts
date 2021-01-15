@@ -42,6 +42,7 @@ export class CrearAlumnoComponent implements OnInit {
 
   ngOnInit() {}
 
+  //Cierra la pantalla actual
   dismiss() {
     this.viewCtrl.dismiss();
   }

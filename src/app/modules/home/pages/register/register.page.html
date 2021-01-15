@@ -1,15 +1,12 @@
-
-
 <body>
-
   <header>
-    <div id="header-div" [routerLink]="['../home']">
+    <div id="header-div" (click)="atras()">
       <ion-icon name="arrow-back"></ion-icon>
       <ion-title>atras</ion-title>
     </div>
   </header>
 
-  <div id="content-div">
+  <div id="content">
     <form (ngSubmit)="onSubmit()">
       <ion-item>
         <ion-label color="medium" position="floating">Nombre</ion-label>

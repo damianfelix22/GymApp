@@ -20,10 +20,12 @@ export class ClaseComponent implements OnInit {
 
   ngOnInit() {}
 
+  //Cierra la pantalla actual (botón superior derecho)
   dismiss() {
     this.viewCtrl.dismiss();
   }
 
+  //Devuelve los días que se dicta una clase
   dias(days: any) {
     let days_text = '- ';
     let dia = '';
