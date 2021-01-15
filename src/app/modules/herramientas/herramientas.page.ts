@@ -9,7 +9,6 @@ export class HerramientasPage implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }
