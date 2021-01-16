@@ -27,28 +27,28 @@ export class InstructoresPage implements OnInit {
       name: "Lucas",
       lastname: "Felix",
       age: 27,
-      avatar: 'https://ionicframework.com/docs/demos/api/avatar/avatar.svg',
+      avatar: 'https://d3k3aw0nh86y2q.cloudfront.net/wp-content/uploads/2020/08/iStock-1252383321-256x256.jpg',
       state: 'activo'
     },
     {
-      name: "Felipe",
-      lastname: "Miguel",
+      name: "Marta",
+      lastname: "Martinez",
       age: 24,
-      avatar: 'https://ionicframework.com/docs/demos/api/avatar/avatar.svg',
+      avatar: 'https://www.crikey.com.au/wp-content/uploads/2019/05/amber-256x256.jpg',
       state: 'inactivo'
     },
     {
       name: "Carlos",
       lastname: "Tevez",
       age: 22,
-      avatar: 'https://ionicframework.com/docs/demos/api/avatar/avatar.svg',
+      avatar: 'https://pbs.twimg.com/profile_images/2690640954/2f9f0ab40048febff6ec82bbc2a3ec67.jpeg',
       state: 'activo'
     },
     {
       name: "Ramón",
       lastname: "Avila",
       age: 35,
-      avatar: 'https://ionicframework.com/docs/demos/api/avatar/avatar.svg',
+      avatar: 'https://itp.nyu.edu/image/w256//people_pics/flash/kowal.jpg',
       state: 'inactivo'
     }
   ]

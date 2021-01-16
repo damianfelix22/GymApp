@@ -1,0 +1,13 @@
+<ion-row class="ion-justify-content-center"><ion-text class="titulo2">CRONÓMETRO</ion-text></ion-row>
+<ion-row style="height:10px"></ion-row>
+<ion-row class="ion-justify-content-center"><ion-text color="light" class="titulo2">{{time}}</ion-text></ion-row>
+
+<ion-row style="height:40px"></ion-row>
+
+<ion-row *ngIf="!running" class="ion-justify-content-center"><button class="circle-button circle-button-bg font-md" ion-button (click)="start()">{{text}}</button></ion-row>
+<ion-row *ngIf="running" class="ion-justify-content-center"><button class="circle-button circle-button-bg circle-button-red font-md" ion-button (click)="stop()">PAUSA</button></ion-row>
+
+<ion-row style="height:40px"></ion-row>
+
+<ion-row class="ion-justify-content-center"><ion-text class="titulo3" (click)="reset()">RESET</ion-text></ion-row>
+<ion-row style="height:30px"></ion-row>

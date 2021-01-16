@@ -1,9 +1,48 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>herramientas</ion-title>
-  </ion-toolbar>
-</ion-header>
+<header>
+  <app-avatar></app-avatar>
+  <ion-menu-button></ion-menu-button>
+</header>
 
-<ion-content>
+<ion-content id="main">
+
+  <div style="background-color: #00bb70;">
+    <div id="card">
+      <ion-text id="title">Herramientas</ion-text>
+    </div>
+  </div>
+
+  <div id="content">
+
+    <ion-slides>
+
+      <ion-slide>
+        <ion-card class="herramientas" mode="ios">
+          <ion-card-content>
+            <app-cronometro></app-cronometro>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card class="herramientas" mode="ios">
+          <ion-card-content>
+            <app-temporizador></app-temporizador>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card class="herramientas" mode="ios">
+          <ion-card-content>
+            <app-tabata></app-tabata>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+    </ion-slides>
+
+  </div>
+
+  <div id="slider-points">• • •</div> 
 
 </ion-content>

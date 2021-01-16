@@ -1,0 +1,19 @@
+<ion-row class="ion-justify-content-center"><ion-text class="titulo2">TABATA</ion-text></ion-row>
+<ion-row class="ion-justify-content-center"><ion-text class="titulo3">8 ROUNDS</ion-text></ion-row>
+
+<div id="content">
+    <ion-card>
+      <ion-card-header color="light"><ion-text class="titulo4">ROUND</ion-text></ion-card-header>
+        <ion-input placeholder="work time" type="number" min="1" step="1" [(ngModel)]="work"></ion-input>
+    </ion-card>        
+    <ion-card>
+      <ion-card-header color="light"><ion-text class="titulo4">DESCANSO</ion-text></ion-card-header>
+        <ion-input placeholder="rest time" type="number" min="1" step="1" [(ngModel)]="rest"></ion-input>
+    </ion-card>        
+</div>
+
+<ion-row class="ion-justify-content-center"><ion-text class="titulo3">{{text}}: {{seg}}'</ion-text></ion-row>
+<ion-row *ngIf="!running" class="ion-justify-content-center"><button class="circle-button circle-button-bg font-md" ion-button (click)="StartTimer()">INICIAR</button></ion-row>
+<ion-row *ngIf="running" class="ion-justify-content-center"><button class="circle-button circle-button-bg circle-button-red font-md" ion-button (click)="resetTimer()">RESET</button></ion-row>
+
+    

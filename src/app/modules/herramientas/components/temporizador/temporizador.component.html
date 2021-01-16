@@ -1,0 +1,21 @@
+<ion-row class="ion-justify-content-center"><ion-text class="titulo2">TEMPORIZADOR</ion-text></ion-row>
+<ion-card>
+  <ion-row  *ngIf="!running3" class="ion-justify-content-center">
+      <ion-col size="3"></ion-col>
+      <ion-col size="5"><ion-datetime displayFormat="mm:ss" value="00:01:30" class="tituloo" (ionChange)="tempChange($event)"></ion-datetime></ion-col>
+      <ion-col size="4"></ion-col>
+  </ion-row>
+</ion-card>
+    
+<ion-row *ngIf="running3" class="ion-justify-content-center"><ion-text class="titulo4">{{min}}:{{seg}}</ion-text></ion-row>
+<ion-row *ngIf="running3" style="height:15px"></ion-row>
+
+
+<ion-row style="height:27px"></ion-row>
+
+<ion-row *ngIf="!running2" class="ion-justify-content-center"><button class="circle-button circle-button-bg font-md" ion-button (click)="StartTimer()">{{text_timer}}</button></ion-row>
+<ion-row *ngIf="running2" class="ion-justify-content-center"><button class="circle-button circle-button-bg circle-button-red font-md" ion-button (click)="PauseTimer()">{{text_timer}}</button></ion-row>
+
+<ion-row style="height:40px"></ion-row>
+
+<ion-row class="ion-justify-content-center"><ion-text class="titulo3" (click)="resetTimer()">RESET</ion-text></ion-row>
