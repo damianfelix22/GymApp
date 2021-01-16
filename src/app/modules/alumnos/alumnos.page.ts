@@ -24,10 +24,10 @@ export class AlumnosPage implements OnInit {
   //alumnos
   users: any = [
     {
-      name: "Lucas",
+      name: "Lucrecia",
       lastname: "Felix",
       days_left: 0,
-      avatar: 'https://ionicframework.com/docs/demos/api/avatar/avatar.svg',
+      avatar: 'https://images.fastcompany.net/image/upload/w_596,c_limit,q_auto:best,f_auto/wp-cms/uploads/2019/02/5-create-fake-people-in-2-seconds-on-this-insane-site.jpg',
       startDate: '01-03-2021',
       expirationDate: '02-03-2021',
       classes: ["Crossfit", "Spinning"]
@@ -36,7 +36,7 @@ export class AlumnosPage implements OnInit {
       name: "Felipe",
       lastname: "Miguel",
       days_left: 26,
-      avatar: 'https://ionicframework.com/docs/demos/api/avatar/avatar.svg',
+      avatar: 'https://petapixel.com/assets/uploads/2017/11/fake3.jpg',
       startDate: '01-01-2021',
       expirationDate: '02-02-2021',
       classes: ['Spinning']
@@ -45,16 +45,16 @@ export class AlumnosPage implements OnInit {
       name: "Carlos",
       lastname: "Tevez",
       days_left: 22,
-      avatar: 'https://ionicframework.com/docs/demos/api/avatar/avatar.svg',
+      avatar: 'https://d3k3aw0nh86y2q.cloudfront.net/wp-content/uploads/2020/08/iStock-1252383321-256x256.jpg',
       startDate: '12-04-2020',
       expirationDate: '01-04-2021',
       classes: ['Taekwondo', 'Spinning']
     },
     {
-      name: "Ramón",
-      lastname: "Avila",
+      name: "Maria",
+      lastname: "Becerra",
       days_left: 8,
-      avatar: 'https://ionicframework.com/docs/demos/api/avatar/avatar.svg',
+      avatar: 'https://pbs.twimg.com/profile_images/667766866090135552/Tm8YRicR.jpg',
       startDate: '01-13-2020',
       expirationDate: '02-13-2021',
       classes: ['Taekwondo', 'Crossfit']
