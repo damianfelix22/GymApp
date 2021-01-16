@@ -7,7 +7,6 @@ import { Component, OnInit, NgZone } from '@angular/core';
 })
 export class CronometroComponent implements OnInit {
 
-  
   public timeBegan = null
   public timeStopped:any = null
   public stoppedDuration:any = 0
