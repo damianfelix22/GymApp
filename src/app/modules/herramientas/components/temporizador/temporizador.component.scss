@@ -1,3 +1,18 @@
+#content{
+    height: 26em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#tiempo-div{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    padding-right: 10px;
+}
+
 .titulo2 {
   color: #00bb70;
   font-weight: bold;

@@ -13,36 +13,33 @@
 
   <div id="content">
 
-    <ion-slides>
+    <ion-row class="herramienta" (click)="cronometro()">
+      <ion-col size="3">
+        <ion-icon name="alarm" size="large" color="light"></ion-icon>
+      </ion-col>
+      <ion-col size="9" style="text-align: left;">
+        <ion-label class="tool-name">Cronómetro</ion-label>
+      </ion-col>
+    </ion-row>
 
-      <ion-slide>
-        <ion-card class="herramientas" mode="ios">
-          <ion-card-content>
-            <app-cronometro></app-cronometro>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
+    <ion-row class="herramienta" (click)="temporizador()">
+      <ion-col size="4">
+        <ion-icon name="alarm" size="large" color="light"></ion-icon>
+      </ion-col>
+      <ion-col size="8" style="text-align: left;">
+        <ion-label class="tool-name">Temporizador</ion-label>
+      </ion-col>
+    </ion-row>
 
-      <ion-slide>
-        <ion-card class="herramientas" mode="ios">
-          <ion-card-content>
-            <app-temporizador></app-temporizador>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-
-      <ion-slide>
-        <ion-card class="herramientas" mode="ios">
-          <ion-card-content>
-            <app-tabata></app-tabata>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-
-    </ion-slides>
+    <ion-row class="herramienta" (click)="tabata()">
+      <ion-col size="4">
+        <ion-icon name="alarm" size="large" color="light"></ion-icon>
+      </ion-col>
+      <ion-col size="8" style="text-align: left;">
+        <ion-label class="tool-name">Tábata Timer</ion-label>
+      </ion-col>
+    </ion-row>
 
   </div>
-
-  <div id="slider-points">• • •</div> 
 
 </ion-content>

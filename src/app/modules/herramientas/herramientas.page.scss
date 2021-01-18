@@ -26,14 +26,6 @@ header{
     --background: #00bb70;
 }
 
-
-.herramientas{
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 ion-card{
     width: 80%;
     height: 30em;
@@ -47,7 +39,9 @@ ion-card{
 #content{
     height: 90%;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 #slider-points{
@@ -57,4 +51,22 @@ ion-card{
     bottom: 6%;
     display: flex;
     justify-content: center;
+}
+
+.herramienta{
+    height: 80px;
+    width: 90%;
+    background-color: #4ddda4;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.tool-name{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
 }

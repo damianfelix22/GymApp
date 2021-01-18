@@ -110,4 +110,15 @@ export class TabataComponent implements OnInit {
     this.ngZone.run(() => { this.running = false });
   }
 
+  workTime(ev: any){
+    if(ev.detail.value.upper==NaN){
+      this.work = 0;
+    }
+    this.work = ev.detail.value.upper;
+  }
+
+  restTime(ev: any){
+    this.rest = ev.detail.value.upper;
+  }
+
 }

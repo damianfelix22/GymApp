@@ -1,3 +1,11 @@
+#content{
+    height: 26em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .titulo2 {
   color: #00bb70;
   font-weight: bold;
