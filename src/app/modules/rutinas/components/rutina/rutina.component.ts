@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { NavParams } from '@ionic/angular';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-rutina',
@@ -9,6 +10,8 @@ import { NavParams } from '@ionic/angular';
 })
 export class RutinaComponent implements OnInit {
 
+  rutinaForm = new FormGroup({});
+
   rutina: any;
 
   user: any;
@@ -16,6 +19,11 @@ export class RutinaComponent implements OnInit {
   constructor(public viewCtrl: ModalController, public navParams: NavParams) {
     this.rutina = this.navParams.get('rutina');
     this.user = this.navParams.get('user');
+
+    this.rutinaForm = new FormGroup({
+      name: new FormControl(this.rutina.title, [Validators.required, Validators.maxLength(25)]),
+      description: new FormControl(this.rutina.description, Validators.required)
+    });
   }
 
   ngOnInit() {}

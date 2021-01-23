@@ -19,7 +19,7 @@
     <form (ngSubmit)="onSubmit()" [formGroup]="classForm">
       <ion-item>
         <ion-label color="light">Nombre de la clase:</ion-label>
-        <ion-input type="text" value="{{clase.name}}" formControlName="className"></ion-input>
+        <ion-input type="text" formControlName="className"></ion-input>
       </ion-item>
 
       <ion-item>
@@ -47,12 +47,12 @@
 
       <ion-item>
         <ion-label color="light">Instructor:</ion-label>
-        <ion-input type="text" value="{{clase.instructor}}" class="input-text" formControlName="instructorName"></ion-input>
+        <ion-input type="text" class="input-text" formControlName="instructorName"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label color="light" style="padding-right: 15px;">Descripción:</ion-label>
-        <ion-textarea class="area" value="{{clase.description}}" rows="6" formControlName="description"></ion-textarea>
+        <ion-textarea class="area" rows="6" formControlName="description"></ion-textarea>
       </ion-item>
 
       <ion-row style="height: 20px;"></ion-row>

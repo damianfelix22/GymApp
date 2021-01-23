@@ -19,12 +19,12 @@
     <form (ngSubmit)="onSubmit()" [formGroup]="alumnoForm">
       <ion-item>
         <ion-label color="light">Nombre:</ion-label>
-        <ion-input type="text" class="input-text" value="{{alumno.name}}" formControlName="name"></ion-input>
+        <ion-input type="text" class="input-text" formControlName="name"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label color="light">Apellido:</ion-label>
-        <ion-input type="text" class="input-text" value="{{alumno.lastname}}" formControlName="lastname"></ion-input>
+        <ion-input type="text" class="input-text" formControlName="lastname"></ion-input>
       </ion-item>
 
       <ion-item>
