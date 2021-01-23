@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { NavParams } from '@ionic/angular';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-crear-rutina',
@@ -8,6 +9,11 @@ import { NavParams } from '@ionic/angular';
   styleUrls: ['./crear-rutina.component.scss'],
 })
 export class CrearRutinaComponent implements OnInit {
+
+  rutinaForm = new FormGroup({
+    name: new FormControl('', [Validators.required, Validators.maxLength(25)]),
+    description: new FormControl('', Validators.required)
+  });
 
   user: any;
 

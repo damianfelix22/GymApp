@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { CrearRutinaComponent } from './components/crear-rutina/crear-rutina.component';
 import { RutinaComponent } from './components/rutina/rutina.component';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-rutinas',
@@ -47,10 +48,20 @@ export class RutinasPage implements OnInit {
 
   rutinasEncontradas: any;
 
-  constructor(public modalController: ModalController, private router: Router) { }
+  constructor(public modalController: ModalController, private router: Router, public loadingController: LoadingController) { }
 
   ngOnInit() {
     this.rutinasEncontradas = this.rutinas;
+    this.loading();
+  }
+
+  async loading(){
+    const loading = await this.loadingController.create({
+      cssClass: 'my-custom-class',
+      message: 'Cargando...',
+      duration: 1000
+    });
+    await loading.present();
   }
 
   //Busca clases por nombre o instructor segun lo ingresado en la barra de búsqueda

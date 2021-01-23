@@ -7,6 +7,8 @@ import { InstructoresPage } from './instructores.page';
 import { CoreModule } from 'src/app/core/core.module';
 import { InstructorComponent } from './instructor/instructor.component';
 import { CrearInstructorComponent } from './crear-instructor/crear-instructor.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   imports: [
@@ -14,7 +16,8 @@ import { CrearInstructorComponent } from './crear-instructor/crear-instructor.co
     FormsModule,
     IonicModule,
     InstructoresPageRoutingModule,
-    CoreModule
+    CoreModule,
+    ReactiveFormsModule
   ],
   declarations: [InstructoresPage, InstructorComponent, CrearInstructorComponent]
 })

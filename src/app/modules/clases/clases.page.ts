@@ -4,7 +4,7 @@ import { ModalController } from '@ionic/angular';
 import { ClaseComponent } from './components/clase/clase.component';
 import { CrearClaseComponent } from './components/crear-clase/crear-clase.component';
 import { ReservasComponent } from './components/reservas/reservas.component';
-
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-clases',
@@ -54,10 +54,20 @@ export class ClasesPage implements OnInit {
   //Variable auxiliar usada para buscar clases
   clasesEncontradas: any;
 
-  constructor(public modalController: ModalController, private router: Router) { }
+  constructor(public modalController: ModalController, private router: Router, public loadingController: LoadingController) { }
 
   ngOnInit() {
     this.clasesEncontradas = this.clases;
+    this.loading();
+  }
+
+  async loading(){
+    const loading = await this.loadingController.create({
+      cssClass: 'my-custom-class',
+      message: 'Cargando...',
+      duration: 1000
+    });
+    await loading.present();
   }
 
   //Busca clases por nombre o instructor segun lo ingresado en la barra de búsqueda
@@ -103,6 +113,7 @@ export class ClasesPage implements OnInit {
   }
 
   //Abre la información de una clase al tocar sobre ella (alumno/admin/instructor)
+
   async abrirClase(clase: any) {
     const modal = await this.modalController.create({
       component: ClaseComponent,
@@ -122,6 +133,13 @@ export class ClasesPage implements OnInit {
 
   //Abre pantalla para reservar una clase (solo para alumno)
   async reservar() {
+    const loading = await this.loadingController.create({
+      cssClass: 'my-custom-class',
+      message: 'Cargando...',
+      duration: 2000
+    });
+    await loading.present();
+
     const modal = await this.modalController.create({
       component: ReservasComponent,
       componentProps: { user: this.user }

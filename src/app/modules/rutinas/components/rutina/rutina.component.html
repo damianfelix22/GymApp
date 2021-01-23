@@ -12,9 +12,9 @@
 
     <ion-row style="height: 15px;"></ion-row>
 
-    <form (ngSubmit)="onSubmit()">
+    <form (ngSubmit)="onSubmit()" [formGroup]="rutinaForm">
       <ion-item>
-        <ion-input type="text" id="title2" value="{{rutina.title}}" class="input-text"></ion-input>
+        <ion-input type="text" id="title2" class="input-text"  formControlName="name"></ion-input>
       </ion-item>
 
       <ion-item>
@@ -27,7 +27,7 @@
       </ion-item>
 
       <ion-item>
-        <ion-textarea class="area" value="{{rutina.description}}" rows="16"></ion-textarea>
+        <ion-textarea class="area" rows="16" formControlName="description"></ion-textarea>
       </ion-item>
 
       <ion-row style="height: 20px;"></ion-row>
