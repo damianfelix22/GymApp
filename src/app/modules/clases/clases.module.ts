@@ -9,6 +9,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { CoreModule } from 'src/app/core/core.module';
 import { ClaseComponent } from './components/clase/clase.component';
 import { ReservasComponent } from './components/reservas/reservas.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { ReservasComponent } from './components/reservas/reservas.component';
     IonicModule,
     ClasesPageRoutingModule,
     SharedModule,
-    CoreModule
+    CoreModule,
+    ReactiveFormsModule
   ],
   declarations: [ClasesPage, ClaseComponent, CrearClaseComponent, ReservasComponent]
 })

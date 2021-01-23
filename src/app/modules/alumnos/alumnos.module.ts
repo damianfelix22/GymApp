@@ -9,6 +9,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { CoreModule } from 'src/app/core/core.module';
 import { CrearAlumnoComponent } from './components/crear-alumno/crear-alumno.component';
 import { AlumnoComponent } from './components/alumno/alumno.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { AlumnoComponent } from './components/alumno/alumno.component';
     IonicModule,
     AlumnosPageRoutingModule,
     SharedModule,
-    CoreModule
+    CoreModule,
+    ReactiveFormsModule
   ],
   declarations: [AlumnosPage, CrearAlumnoComponent, AlumnoComponent]
 })

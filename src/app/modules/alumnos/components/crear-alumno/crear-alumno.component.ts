@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-crear-alumno',
@@ -7,6 +8,11 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./crear-alumno.component.scss'],
 })
 export class CrearAlumnoComponent implements OnInit {
+
+  alumnoForm = new FormGroup({
+    name: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z ]*')]),
+    lastname: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z ]*')])
+  });
 
   clases: any = [
     {

@@ -16,15 +16,15 @@
 
     <ion-row style="height: 10px;"></ion-row> 
 
-    <form (ngSubmit)="onSubmit()">
+    <form (ngSubmit)="onSubmit()" [formGroup]="alumnoForm">
       <ion-item>
         <ion-label color="light">Nombre:</ion-label>
-        <ion-input type="text" autocomplete="name" class="input-text" value="{{alumno.name}}"></ion-input>
+        <ion-input type="text" class="input-text" value="{{alumno.name}}" formControlName="name"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label color="light">Apellido:</ion-label>
-        <ion-input type="text" autocomplete="name" class="input-text" value="{{alumno.lastname}}"></ion-input>
+        <ion-input type="text" class="input-text" value="{{alumno.lastname}}" formControlName="lastname"></ion-input>
       </ion-item>
 
       <ion-item>
@@ -46,7 +46,7 @@
 
       <ion-row style="height: 20px;"></ion-row>
 
-      <ion-button class="button" type="submit">Guardar</ion-button>
+      <ion-button class="button" type="submit" [disabled]="!alumnoForm.valid">Guardar</ion-button>
     </form>
 
     <ion-row style="height: 25px;"></ion-row>
