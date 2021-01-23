@@ -5,27 +5,31 @@
     justify-content: center;
     padding-left: 15px;
     background-image: linear-gradient(45deg,#ebebeb, #eeeeee, #ffffff);
-    height: 8em;
-    width: 8em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     border-radius: 1.5em;
 }
 
 #icon-div{
+    background-color: #00bb70;
+    width: 2em;
+    height: 2em;
+    border-radius: 100%;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #00bb70;
-    height: 30px;
-    width: 30px;
-    border-radius: 25px;
 }
 
 #icon{
     color: white;
+    zoom: 1.4;
 }
 
 #title{
-    font-size: 17px;
+    font-size: 16px;
     color: #00bb70;
+    font-weight: bold;
 }

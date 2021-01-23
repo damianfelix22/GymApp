@@ -15,26 +15,21 @@
     <div style="background-color: white;"><div id="card"></div></div>
   
     <div id="content">
-      <div id="menu-div" *ngIf="user.user_role == 'admin'" >
-        <app-clases-button class="menu-item"></app-clases-button>
-        <app-alumnos-button class="menu-item"></app-alumnos-button>
-        <app-instructor-button class="menu-item"></app-instructor-button>
-        <app-rutinas-button class="menu-item"></app-rutinas-button>
-        <app-herramientas-button class="menu-item"></app-herramientas-button>
-      </div>
 
-      <div id="menu-div" *ngIf="user.user_role == 'alumno'" >
-        <app-clases-button class="menu-item"></app-clases-button>
-        <app-rutinas-button class="menu-item"></app-rutinas-button>
-        <app-herramientas-button class="menu-item"></app-herramientas-button>
-      </div>
+      <div class="btn-div" *ngIf="user.user_role == 'admin'"><app-clases-button></app-clases-button></div>
+      <div class="btn-div" *ngIf="user.user_role == 'admin'"><app-alumnos-button></app-alumnos-button></div>
+      <div class="btn-div" *ngIf="user.user_role == 'admin'"><app-instructor-button></app-instructor-button></div>
+      <div class="btn-div" *ngIf="user.user_role == 'admin'"><app-rutinas-button></app-rutinas-button></div>
+      <div class="btn-div" *ngIf="user.user_role == 'admin'"><app-herramientas-button></app-herramientas-button></div>
 
-      <div id="menu-div" *ngIf="user.user_role == 'instructor'" >
-        <app-clases-button class="menu-item"></app-clases-button>
-        <app-alumnos-button class="menu-item"></app-alumnos-button>
-        <app-rutinas-button class="menu-item"></app-rutinas-button>
-        <app-herramientas-button class="menu-item"></app-herramientas-button>
-      </div>
+      <div class="btn-div" *ngIf="user.user_role == 'alumno'"><app-clases-button></app-clases-button></div>
+      <div class="btn-div" *ngIf="user.user_role == 'alumno'"><app-rutinas-button></app-rutinas-button></div>
+      <div class="btn-div" *ngIf="user.user_role == 'alumno'"><app-herramientas-button></app-herramientas-button></div>
+
+      <div class="btn-div" *ngIf="user.user_role == 'instructor'"><app-clases-button></app-clases-button></div>
+      <div class="btn-div" *ngIf="user.user_role == 'instructor'"><app-alumnos-button></app-alumnos-button></div>
+      <div class="btn-div" *ngIf="user.user_role == 'instructor'"><app-rutinas-button></app-rutinas-button></div>
+      <div class="btn-div" *ngIf="user.user_role == 'instructor'"><app-herramientas-button></app-herramientas-button></div>
 
     </div>
 
