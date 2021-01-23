@@ -64,7 +64,7 @@ export class InstructoresPage implements OnInit {
 
   async loading(){
     const loading = await this.loadingController.create({
-      cssClass: 'my-custom-class',
+      cssClass: 'loading',
       message: 'Cargando...',
       duration: 1000
     });
