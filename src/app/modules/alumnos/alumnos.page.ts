@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { CrearAlumnoComponent } from './components/crear-alumno/crear-alumno.component';
 import { AlumnoComponent } from './components/alumno/alumno.component';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-alumnos',
@@ -62,10 +63,20 @@ export class AlumnosPage implements OnInit {
   ]
 
 
-  constructor(public modalController: ModalController, private router: Router) { }
+  constructor(public modalController: ModalController, private router: Router, public loadingController: LoadingController) { }
 
   ngOnInit() {
     this.alumnosEncontrados = this.users;
+    this.loading();
+  }
+
+  async loading(){
+    const loading = await this.loadingController.create({
+      cssClass: 'my-custom-class',
+      message: 'Cargando...',
+      duration: 1000
+    });
+    await loading.present();
   }
 
   //Busca alumnos por nombre o apellido
