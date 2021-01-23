@@ -7,6 +7,7 @@ import { RutinasPage } from './rutinas.page';
 import { CoreModule } from 'src/app/core/core.module';
 import { CrearRutinaComponent } from './components/crear-rutina/crear-rutina.component';
 import { RutinaComponent } from './components/rutina/rutina.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { RutinaComponent } from './components/rutina/rutina.component';
     FormsModule,
     IonicModule,
     RutinasPageRoutingModule,
-    CoreModule
+    CoreModule,
+    ReactiveFormsModule
   ],
   declarations: [RutinasPage, CrearRutinaComponent, RutinaComponent]
 })

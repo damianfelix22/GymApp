@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { CrearInstructorComponent } from './crear-instructor/crear-instructor.component';
 import { InstructorComponent } from './instructor/instructor.component';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-instructores',
@@ -54,10 +55,20 @@ export class InstructoresPage implements OnInit {
   ]
 
 
-  constructor(public modalController: ModalController, private router: Router) { }
+  constructor(public modalController: ModalController, private router: Router, public loadingController: LoadingController) { }
 
   ngOnInit() {
     this.profesEncontrados = this.profes;
+    this.loading();
+  }
+
+  async loading(){
+    const loading = await this.loadingController.create({
+      cssClass: 'loading',
+      message: 'Cargando...',
+      duration: 1000
+    });
+    await loading.present();
   }
 
   //Busca instructores por nombre o apellido

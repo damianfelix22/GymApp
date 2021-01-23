@@ -12,34 +12,37 @@
   </div>
 
   <div id="content">
-
-    <ion-row class="herramienta" (click)="cronometro()">
-      <ion-col size="4">
-        <ion-icon name="alarm" size="large" color="light"></ion-icon>
-      </ion-col>
-      <ion-col size="8" style="text-align: left;">
-        <ion-label class="tool-name">Cronómetro</ion-label>
-      </ion-col>
-    </ion-row>
-
-    <ion-row class="herramienta" (click)="temporizador()">
-      <ion-col size="4">
-        <ion-icon name="hourglass" size="large" color="light"></ion-icon>
-      </ion-col>
-      <ion-col size="8" style="text-align: left;">
-        <ion-label class="tool-name">Temporizador</ion-label>
-      </ion-col>
-    </ion-row>
-
-    <ion-row class="herramienta" (click)="tabata()">
-      <ion-col size="4">
-        <ion-icon name="fitness" size="large" color="light"></ion-icon>
-      </ion-col>
-      <ion-col size="8" style="text-align: left;">
-        <ion-label class="tool-name">Tábata Timer</ion-label>
-      </ion-col>
-    </ion-row>
-
+    <div class="btn-div">
+      <div id="button" (click)="cronometro()">
+        <div id="icon-div"><ion-icon id="icon" name="alarm"></ion-icon></div>
+        <ion-row style="height: 10px;"></ion-row>
+        <ion-text id="btn-title">Cronómetro</ion-text>
+      </div>
+    </div>
+  
+    <div class="btn-div">
+      <div id="button" (click)="temporizador()">
+        <div id="icon-div"><ion-icon id="icon" name="hourglass"></ion-icon></div>
+        <ion-row style="height: 10px;"></ion-row>
+        <ion-text id="btn-title">Temporizador</ion-text>
+      </div>
+    </div>
+  
+    <div class="btn-div">
+      <div id="button" (click)="tabata()">
+        <div id="icon-div"><ion-icon id="icon" name="fitness"></ion-icon></div>
+        <ion-row style="height: 10px;"></ion-row>
+        <ion-text id="btn-title">Tábata</ion-text>
+      </div>
+    </div>
+  
+    <div class="btn-div">
+      <div id="button">
+        <div id="icon-div"><ion-icon id="icon" name="barbell"></ion-icon></div>
+        <ion-row style="height: 10px;"></ion-row>
+        <ion-text id="btn-title">1RM</ion-text>
+      </div>
+    </div>
   </div>
 
 </ion-content>
