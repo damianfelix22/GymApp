@@ -24,25 +24,29 @@ export class RutinasPage implements OnInit {
       title: 'Velocidad y Potencia',
       description: 'esto es lo que hay que hacer en esta clase, acá pueden aparecer ejercicios y recomendaciones',
       date: '01-05-2021',
-      class: 'Taekwondo'
+      class: 'Taekwondo',
+      instructor: 'Pablo'
     },
     {
       title: 'Resistencia',
       description: 'esto es lo que hay que hacer en esta clase, acá pueden aparecer ejercicios y recomendaciones',
       date: '01-05-2021',
-      class: 'Spinning'
+      class: 'Spinning',
+      instructor: 'Roberto'
     },
     {
       title: 'Fuerza',
       description: 'esto es lo que hay que hacer en esta clase, acá pueden aparecer ejercicios y recomendaciones',
       date: '01-05-2021',
-      class: 'Crossfit'
+      class: 'Crossfit',
+      instructor: 'Mariano'
     },
     {
       title: 'Calentamiento previo',
       description: 'esto es lo que hay que hacer en esta clase, acá pueden aparecer ejercicios y recomendaciones',
       date: '01-05-2021',
-      class: 'Taekwondo'
+      class: 'Taekwondo',
+      instructor: 'Carlos'
     }
   ];
 

@@ -40,8 +40,17 @@
       </ion-item>
 
       <ion-item>
+        <ion-label>Ultimo Pago:</ion-label>
+        <ion-datetime displayFormat="DD-MM-YYYY" value="{{alumno.lastPayment}}"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
         <ion-label>Fecha de Vencimiento:</ion-label>
         <ion-datetime displayFormat="DD-MM-YYYY" value="{{alumno.expirationDate}}"></ion-datetime>
+      </ion-item>
+
+      <ion-item class="item">
+        <ion-text color="light">Asistió a {{alumno.lastReservations}} clases desde su último pago</ion-text>
       </ion-item>
 
       <ion-row style="height: 20px;"></ion-row>
