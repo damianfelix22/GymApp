@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { NavParams } from '@ionic/angular';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-clase',
@@ -13,17 +14,27 @@ export class ClaseComponent implements OnInit {
 
   user: any;
 
+  classForm = new FormGroup({});
+
   constructor(public viewCtrl: ModalController, public navParams: NavParams) {
     this.clase = this.navParams.get('clase');
     this.user = this.navParams.get('user');
+
+    this.classForm = new FormGroup({
+      className: new FormControl(this.clase.name, Validators.required),
+      instructorName: new FormControl(this.clase.instructor, [Validators.required, Validators.pattern('[a-zA-Z ]*')]),
+      description: new FormControl(this.clase.description)
+    });
   }
 
   ngOnInit() {}
 
+  //Cierra la pantalla actual (botón superior derecho)
   dismiss() {
     this.viewCtrl.dismiss();
   }
 
+  //Devuelve los días que se dicta una clase
   dias(days: any) {
     let days_text = '- ';
     let dia = '';

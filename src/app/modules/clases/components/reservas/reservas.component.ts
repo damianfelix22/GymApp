@@ -9,8 +9,10 @@ import { NavParams } from '@ionic/angular';
 })
 export class ReservasComponent implements OnInit {
 
+  //Recibe desde la pantalla anterior los datos del alumno que está usando la app
   user: any;
 
+  //Clases que ese alumno puede reservar según su matrícula
   clases: any = [
     {
       name: 'Taekwondo',
@@ -41,6 +43,7 @@ export class ReservasComponent implements OnInit {
     },
   ];
 
+  //Clase que el alumno selecciona para reservar
   clase_sel: any = this.clases[0];
 
   constructor(public viewCtrl: ModalController, public navParams: NavParams) {
@@ -54,6 +57,7 @@ export class ReservasComponent implements OnInit {
     this.viewCtrl.dismiss();
   }
 
+  //Cambia la clase seleccionada
   select(ev: any){
     console.log(ev.detail.value);
     for(let i=0; i<this.clases.length; i++){
@@ -63,6 +67,7 @@ export class ReservasComponent implements OnInit {
     }
   }
 
+  //Acción de reservar la clase
   reservar(){
     alert("Clase Reservada");
     this.viewCtrl.dismiss();
