@@ -107,3 +107,16 @@ form{
 .input-text{
     text-align: center;
 }
+
+#agregarHorario{
+    width: 90%;
+    margin-bottom: 15px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    background-color:#007948;
+    color: white;
+}

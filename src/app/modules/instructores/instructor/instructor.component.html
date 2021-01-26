@@ -33,6 +33,13 @@
       </ion-item>
 
       <ion-item>
+        <ion-label color="light">Clases que dicta:</ion-label>
+        <ion-select multiple="true" (ionChange)="select($event)" [value]="(instructor.lessons)">
+          <ion-select-option *ngFor="let clase of instructor.lessons" value="{{clase}}">{{clase}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
         <ion-label color="light">Estado:</ion-label>
         <ion-select value="{{instructor.state}}">
           <ion-select-option value="activo">Activo</ion-select-option>
