@@ -17,7 +17,7 @@ export class ClasesPage implements OnInit {
   user: any = {
     name: 'Pedro',
     lastname: 'Suarez',
-    user_role: 'admin' //cambiar este valor por 'admin', 'alumno' o 'instructor'
+    user_role: 'alumno' //cambiar este valor por 'admin', 'alumno' o 'instructor'
   };
 
   //Clases que puede ver ese usuario (dependiendo su rol)
