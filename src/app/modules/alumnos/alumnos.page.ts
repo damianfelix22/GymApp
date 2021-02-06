@@ -16,7 +16,7 @@ export class AlumnosPage implements OnInit {
   user: any = {
     name: 'Pedro',
     lastname: 'Suarez',
-    user_role: 'instructor'
+    user_role: 'admin'
   }
 
   //alumnos
