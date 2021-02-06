@@ -16,7 +16,7 @@ export class AlumnosPage implements OnInit {
   user: any = {
     name: 'Pedro',
     lastname: 'Suarez',
-    user_role: 'admin'
+    user_role: 'instructor'
   }
 
   //alumnos
@@ -84,7 +84,7 @@ export class AlumnosPage implements OnInit {
     const loading = await this.loadingController.create({
       cssClass: 'loading',
       message: 'Cargando...',
-      duration: 1000
+      duration: 500
     });
     await loading.present();
   }

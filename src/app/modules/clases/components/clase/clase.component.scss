@@ -1,3 +1,5 @@
+$verde1: #00c964;
+
 header{
     padding-top: 20px;
     padding-bottom: 10px;
@@ -14,7 +16,7 @@ header{
 }
 
 #title{
-    color: #00c964;
+    color: $verde1;
     font-size: 24px;
     font-weight: bold;
     padding-bottom: 20px;
@@ -97,7 +99,7 @@ form{
     margin-bottom: 20px;
     height: 40px;
     --border-radius: 25px;
-    --background: #00bb70;
+    --background: #00c964;
     --box-shadow: 0;
     color:#ffffff;
     font-weight: bold;

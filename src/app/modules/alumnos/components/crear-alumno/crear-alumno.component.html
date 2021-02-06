@@ -5,9 +5,8 @@
 <ion-icon id="icon" name="close" (click)="dismiss()"></ion-icon>
 
 <ion-content id="main">
-  <div style="background-color: #00bb70;"><div id="card"></div></div>
 
-  <div id="content1" *ngIf="user.user_role == 'admin'">
+  <div id="content" *ngIf="user.user_role == 'admin'">
 
     <ion-row style="height: 15px;"></ion-row>
 
@@ -17,29 +16,29 @@
 
     <form (ngSubmit)="onSubmit()" [formGroup]="alumnoForm">
       <ion-item>
-        <ion-label color="light">Nombre:</ion-label>
+        <ion-label position="floating" color="success">Nombre:</ion-label>
         <ion-input type="text" placeholder="ingresar nombre" class="input-text" formControlName="name"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label color="light">Apellido:</ion-label>
+        <ion-label position="floating" color="success">Apellido:</ion-label>
         <ion-input type="text" placeholder="ingresar nombre" class="input-text" formControlName="lastname" ></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label>Clases autorizadas:</ion-label>
+        <ion-label position="floating" color="success">Clases autorizadas:</ion-label>
         <ion-select interface="action-sheet" (ionChange)="select($event)" multiple="true">
           <ion-select-option *ngFor="let clase of clases" value="{{clase.name}}">{{clase.name}}</ion-select-option>
         </ion-select>
       </ion-item>
 
       <ion-item>
-        <ion-label>Fecha de Inicio:</ion-label>
+        <ion-label position="floating" color="success">Fecha de Inicio:</ion-label>
         <ion-datetime displayFormat="DD-MM-YYYY" value="01-01-2020"></ion-datetime>
       </ion-item>
 
       <ion-item>
-        <ion-label>Fecha de Vencimiento:</ion-label>
+        <ion-label position="floating" color="success">Fecha de Vencimiento:</ion-label>
         <ion-datetime displayFormat="DD-MM-YYYY" value="01-02-2020"></ion-datetime>
       </ion-item>
 
