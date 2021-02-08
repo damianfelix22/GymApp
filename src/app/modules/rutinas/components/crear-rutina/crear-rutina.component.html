@@ -5,25 +5,25 @@
 <ion-icon id="icon" name="close" (click)="dismiss()"></ion-icon>
 
 <ion-content id="main">
-  <div style="background-color: #00bb70;"><div id="card"></div></div>
 
   <!-- VISTA DE ADMINISTRADOR / INSTRUCTOR -->
-  <div id="content1">
+  <div id="content">
 
     <ion-row style="height: 15px;"></ion-row>
 
     <form (ngSubmit)="onSubmit()" [formGroup]="rutinaForm">
       <ion-item>
-        <ion-input type="text" id="title2" placeholder="Nombre de la rutina" class="input-text" formControlName="name"></ion-input>
+        <ion-label position="floating" color="success">Título:</ion-label>
+        <ion-input type="text" placeholder="ingresar título" class="input-text" formControlName="name"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label>Fecha:</ion-label>
+        <ion-label position="floating" color="success">Fecha:</ion-label>
         <ion-datetime displayFormat="DD-MM-YYYY" value="01-01-2021"></ion-datetime>
       </ion-item>
 
       <ion-item>
-        <ion-label>Clase:</ion-label>
+        <ion-label position="floating" color="success">Clase:</ion-label>
         <ion-select class="select" placeholder="Seleccionar">
           <ion-select-option>Crossfit</ion-select-option>
           <ion-select-option>Taekwondo</ion-select-option>
@@ -32,7 +32,7 @@
       </ion-item>
 
       <ion-item>
-        <ion-textarea class="area" placeholder="Descripción de la rutina"  rows="16" formControlName="description"></ion-textarea>
+        <ion-textarea class="area" placeholder="Descripción de la rutina"  rows="10" formControlName="description"></ion-textarea>
       </ion-item>
 
       <ion-row style="height: 20px;"></ion-row>

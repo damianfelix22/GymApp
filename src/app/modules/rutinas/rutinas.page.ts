@@ -63,7 +63,7 @@ export class RutinasPage implements OnInit {
     const loading = await this.loadingController.create({
       cssClass: 'loading',
       message: 'Cargando...',
-      duration: 1000
+      duration: 300
     });
     await loading.present();
   }
