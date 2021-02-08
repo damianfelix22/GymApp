@@ -25,32 +25,36 @@ export class InstructoresPage implements OnInit {
   //instructores
   profes: any = [
     {
-      name: "Lucas",
-      lastname: "Felix",
-      age: 27,
-      avatar: 'https://d3k3aw0nh86y2q.cloudfront.net/wp-content/uploads/2020/08/iStock-1252383321-256x256.jpg',
-      state: 'activo'
+      name: "Lucas",                                                          //Nombre
+      lastname: "Felix",                                                      //Apellido
+      age: 27,                                                                //Edad
+      avatar: 'https://itp.nyu.edu/image/w256//people_pics/flash/kowal.jpg',  //Avatar
+      state: 'activo',                                                        //Estado
+      lessons: ['Taekwondo', 'Spinning'],                                     //Clases que dicta
     },
     {
       name: "Marta",
       lastname: "Martinez",
       age: 24,
       avatar: 'https://www.crikey.com.au/wp-content/uploads/2019/05/amber-256x256.jpg',
-      state: 'inactivo'
+      state: 'inactivo',
+      lessons: ['Crossfit'],
     },
     {
       name: "Carlos",
       lastname: "Tevez",
       age: 22,
       avatar: 'https://pbs.twimg.com/profile_images/2690640954/2f9f0ab40048febff6ec82bbc2a3ec67.jpeg',
-      state: 'activo'
+      state: 'activo',
+      lessons: ['Funcional'],
     },
     {
       name: "Ramón",
       lastname: "Avila",
       age: 35,
-      avatar: 'https://itp.nyu.edu/image/w256//people_pics/flash/kowal.jpg',
-      state: 'inactivo'
+      avatar: 'https://d3k3aw0nh86y2q.cloudfront.net/wp-content/uploads/2020/08/iStock-1252383321-256x256.jpg',
+      state: 'inactivo',
+      lessons: ['Crossfit', 'Funcional'],
     }
   ]
 
@@ -64,7 +68,7 @@ export class InstructoresPage implements OnInit {
 
   async loading(){
     const loading = await this.loadingController.create({
-      cssClass: 'my-custom-class',
+      cssClass: 'loading',
       message: 'Cargando...',
       duration: 1000
     });

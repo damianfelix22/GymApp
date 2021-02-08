@@ -17,7 +17,7 @@ header{
     height: 40px;
     width: 100%;
     background-color: white;
-    border-radius: 0 0 50px 50px;
+    border-radius: 0 0 10px 10px;
     justify-content: center;
     text-align: center;
 }
@@ -31,19 +31,33 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0;
 }
 
 #rutinas-content{
+    margin-top: 15px;
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-around;
 }
 
 #rutina-div{
-    width: 50%;
+    width: 44%;
+    ion-card{
+        margin: 0;   
+        margin-bottom: 15px;
+        padding: 0;
+        border-radius: 20px;
+    }
 }
 
-#rutina{
-    border-radius: 20px;
+#searchbar-div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 #searchbar{
@@ -53,8 +67,7 @@ header{
 }
 
 ion-item{
-    --background: #4ddda4;
-    --border-radius: 30px;
+    --background: #00bb70;
     color: white;
     font-weight: bold;
     width: 90%;

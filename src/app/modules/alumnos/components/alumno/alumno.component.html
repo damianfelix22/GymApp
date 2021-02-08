@@ -5,10 +5,9 @@
 <ion-icon id="icon" name="close" (click)="dismiss()"></ion-icon>
 
 <ion-content id="main">
-  <div style="background-color: #00bb70;"><div id="card"></div></div>
 
   <!-- VISTA DE ADMINISTRADOR -->
-  <div id="content1" *ngIf="user.user_role == 'admin'">
+  <div id="content" *ngIf="user.user_role == 'admin'">
 
     <ion-row style="height: 15px;"></ion-row>
 
@@ -18,30 +17,39 @@
 
     <form (ngSubmit)="onSubmit()" [formGroup]="alumnoForm">
       <ion-item>
-        <ion-label color="light">Nombre:</ion-label>
+        <ion-label position="floating" color="success">Nombre:</ion-label>
         <ion-input type="text" class="input-text" formControlName="name"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label color="light">Apellido:</ion-label>
+        <ion-label position="floating" color="success">Apellido:</ion-label>
         <ion-input type="text" class="input-text" formControlName="lastname"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label>Clases autorizadas:</ion-label>
+        <ion-label position="floating" color="success">Clases autorizadas:</ion-label>
         <ion-select interface="action-sheet" (ionChange)="select($event)"  multiple="true" [value]="(clases)">
           <ion-select-option *ngFor="let clase of clases" value="{{clase}}">{{clase}}</ion-select-option>
         </ion-select>
       </ion-item>
 
       <ion-item>
-        <ion-label>Fecha de Inicio:</ion-label>
+        <ion-label position="floating" color="success">Fecha de Inicio:</ion-label>
         <ion-datetime displayFormat="DD-MM-YYYY" value="{{alumno.startDate}}"></ion-datetime>
       </ion-item>
 
       <ion-item>
-        <ion-label>Fecha de Vencimiento:</ion-label>
+        <ion-label position="floating" color="success">Ultimo Pago:</ion-label>
+        <ion-datetime displayFormat="DD-MM-YYYY" value="{{alumno.lastPayment}}"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating" color="success">Fecha de Vencimiento:</ion-label>
         <ion-datetime displayFormat="DD-MM-YYYY" value="{{alumno.expirationDate}}"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-text>Asistió a {{alumno.lastReservations}} clases desde su último pago</ion-text>
       </ion-item>
 
       <ion-row style="height: 20px;"></ion-row>
@@ -54,7 +62,7 @@
   </div>
 
   <!-- VISTA DE INSTRUCTOR -->
-  <div id="content1" *ngIf="user.user_role == 'alumno'">
+  <div id="content" *ngIf="user.user_role == 'instructor'">
 
     <ion-row style="height: 15px;"></ion-row>
 
@@ -62,31 +70,41 @@
 
     <ion-row style="height: 10px;"></ion-row> 
 
-    <div id="items-div">
-      <ion-item class="item2">
-        <ion-label color="light">Nombre: {{alumno.name}}</ion-label>
-      </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="success">Nombre:</ion-label>
+      <ion-input type="text" class="input-text" value="{{alumno.name}}"></ion-input>
+    </ion-item>
 
-      <ion-item class="item2">
-        <ion-label color="light">Apellido: {{alumno.lastname}}</ion-label>
-      </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="success">Apellido:</ion-label>
+      <ion-input type="text" class="input-text" value="{{alumno.lastname}}"></ion-input>
+    </ion-item>
 
-      <ion-item class="item2">
-        <ion-label>Clases autorizadas:</ion-label>
-        <ion-select multiple="true" [value]="(clases)">
-          <ion-select-option *ngFor="let clase of clases" value="{{clase}}" disabled="true">{{clase}}</ion-select-option>
-        </ion-select>
-      </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="success">Clases autorizadas:</ion-label>
+      <ion-select multiple="true" [value]="(clases)">
+        <ion-select-option *ngFor="let clase of clases" value="{{clase}}" disabled="true">{{clase}}</ion-select-option>
+      </ion-select>
+    </ion-item>
 
-      <ion-item class="item2">
-        <ion-label>Fecha de Inicio: {{alumno.startDate}}</ion-label>
-      </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="success">Fecha de Inicio:</ion-label>
+      <ion-datetime displayFormat="DD-MM-YYYY" value="{{alumno.startDate}}"></ion-datetime>
+    </ion-item>
 
-      <ion-item class="item2">
-        <ion-label>Fecha de Vencimiento: {{alumno.expirationDate}}</ion-label>
-      </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="success">Ultimo Pago:</ion-label>
+      <ion-datetime displayFormat="DD-MM-YYYY" value="{{alumno.lastPayment}}"></ion-datetime>
+    </ion-item>
 
-    </div>
+    <ion-item>
+      <ion-label position="floating" color="success">Fecha de Vencimiento:</ion-label>
+      <ion-datetime displayFormat="DD-MM-YYYY" value="{{alumno.expirationDate}}"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-text>Asistió a {{alumno.lastReservations}} clases desde su último pago</ion-text>
+    </ion-item>
 
     <ion-row style="height: 25px;"></ion-row>
 

@@ -5,20 +5,17 @@
 <ion-icon id="icon" name="close" (click)="dismiss()"></ion-icon>
 
 <ion-content id="main">
-  <div style="background-color: #00bb70;"><div id="card"></div></div>
 
-  <div id="content1">
-
-    <ion-row style="height: 15px;"></ion-row>
-
-    <ion-label id="title2">Seleccione una clase</ion-label>
+  <div id="content">
 
     <ion-item>
-      <ion-label>Clases del día:</ion-label>
+      <ion-label position="floating" color="success">Clases del día:</ion-label>
       <ion-select interface="action-sheet" (ionChange)="select($event)" value="{{clases[0].name}}">
         <ion-select-option *ngFor="let clase of clases" [value]="(clase.name)">{{clase.name}} ({{clase.start}} - {{clase.end}})</ion-select-option>
       </ion-select>
     </ion-item>
+
+    <ion-row style="height: 20px;"></ion-row>
 
     <div id="card-div">
       <ion-card mode="ios" id="clase">

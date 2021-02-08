@@ -1,24 +1,30 @@
 <header>
-  <ion-text id="title">{{rutina.title}}</ion-text>
+  <ion-text id="title">Rutina</ion-text>
 </header>
 
 <ion-icon id="icon" name="close" (click)="dismiss()"></ion-icon>
 
 <ion-content id="main">
-  <div style="background-color: #00bb70;"><div id="card"></div></div>
 
   <!-- VISTA DE ADMINISTRADOR / INSTRUCTOR -->
-  <div id="content1" *ngIf="user.user_role == 'admin'">
+  <div id="content" *ngIf="user.user_role == 'admin'">
 
     <ion-row style="height: 15px;"></ion-row>
 
     <form (ngSubmit)="onSubmit()" [formGroup]="rutinaForm">
+
       <ion-item>
-        <ion-input type="text" id="title2" class="input-text"  formControlName="name"></ion-input>
+        <ion-label position="floating" color="success">Título:</ion-label>
+        <ion-input type="text" placeholder="ingresar nombre" class="input-text" formControlName="name"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label>Clase:</ion-label>
+        <ion-label position="floating" color="success">Fecha:</ion-label>
+        <ion-datetime displayFormat="DD-MM-YYYY" value="{{rutina.date}}"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating" color="success">Clase:</ion-label>
         <ion-select class="select" value="{{rutina.class}}" placeholder="Seleccionar">
           <ion-select-option>Crossfit</ion-select-option>
           <ion-select-option>Taekwondo</ion-select-option>
@@ -27,7 +33,7 @@
       </ion-item>
 
       <ion-item>
-        <ion-textarea class="area" rows="16" formControlName="description"></ion-textarea>
+        <ion-textarea class="area" rows="10" formControlName="description"></ion-textarea>
       </ion-item>
 
       <ion-row style="height: 20px;"></ion-row>
@@ -51,6 +57,8 @@
     <ion-row style="height: 10px;"></ion-row>
 
     <div id="description-div"><ion-text id="description">{{rutina.description}}</ion-text></div>
+
+    <ion-item class="item2"><ion-label>Autor: {{rutina.instructor}}</ion-label></ion-item>
 
     <ion-row style="height: 25px;"></ion-row>
 
