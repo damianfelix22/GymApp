@@ -1,5 +1,6 @@
 header{
     padding-top: 20px;
+    padding-bottom: 10px;
     background-color: white;
     align-items: flex-end;
     text-align: center;
@@ -13,34 +14,17 @@ header{
 }
 
 #title{
-    color: #00bb70;
+    color: #00c964;
     font-size: 24px;
     font-weight: bold;
     padding-bottom: 20px;
-}
-
-#title2{
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    padding-bottom: 20px;
-}
-
-#card{
-    height: 40px;
-    width: 100%;
-    background-color: white;
-    border-radius: 0 0 50px 50px;
-    justify-content: center;
-    text-align: center;
 }
 
 #main{
-    --background: #00bb70;
     width: 100%;
 }
 
-#content1{
+#content{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -55,13 +39,18 @@ header{
 }
 
 ion-item{
-    --background: #4ddda4;
-    --border-radius: 30px;
-    color: white;
-    font-weight: bold;
-    width: 90%;
-    justify-content: center;
-    text-align: left;
+    --border-color: rgb(179, 179, 179);
+    --padding-start: 0;
+    width: 70%;
+    text-align: center;
+    padding-top: 15px;
+    font-size: 14px;
+    ion-label{
+        text-align: left;
+        font-weight: bold;
+        font-size: 20px;
+        padding-bottom: 10px;
+    }
 }
 
 .item2{
@@ -93,11 +82,13 @@ form{
 }
 
 .button{
+    margin-top: 20px;
+    margin-bottom: 20px;
     height: 40px;
     --border-radius: 25px;
-    --background: white;
+    --background: #00bb70;
     --box-shadow: 0;
-    color:#00bb70;
+    color:#ffffff;
     font-weight: bold;
     font-size: 13px;
 }
@@ -110,6 +101,10 @@ form{
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+}
+
+ion-card{
+    --background: #c0f5d4;
 }
 
 #clase{

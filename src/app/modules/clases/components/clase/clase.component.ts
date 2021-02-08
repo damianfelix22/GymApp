@@ -26,7 +26,8 @@ export class ClaseComponent implements OnInit {
     this.classForm = new FormGroup({
       className: new FormControl(this.clase.name, Validators.required),
       instructorName: new FormControl(this.clase.instructor, [Validators.required, Validators.pattern('[a-zA-Z ]*')]),
-      description: new FormControl(this.clase.description)
+      description: new FormControl(this.clase.description),
+      maxQuota: new FormControl(this.clase.maxQuota, [Validators.min(1), Validators.required, Validators.pattern('[0-9]*')])
     });
   }
 

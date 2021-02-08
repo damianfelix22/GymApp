@@ -5,9 +5,8 @@
 <ion-icon id="icon" name="close" (click)="dismiss()"></ion-icon>
 
 <ion-content id="main">
-  <div style="background-color: #00bb70;"><div id="card"></div></div>
 
-  <div id="content1" *ngIf="user.user_role == 'admin'">
+  <div id="content" *ngIf="user.user_role == 'admin'">
 
     <ion-row style="height: 15px;"></ion-row>
 
@@ -17,22 +16,22 @@
 
     <form (ngSubmit)="onSubmit()" [formGroup]="instructorForm">
       <ion-item>
-        <ion-label color="light">Nombre:</ion-label>
+        <ion-label position="floating" color="success">Nombre:</ion-label>
         <ion-input type="text" placeholder="ingresar nombre" class="input-text" formControlName="name"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label color="light">Apellido:</ion-label>
+        <ion-label position="floating" color="success">Apellido:</ion-label>
         <ion-input type="text" placeholder="ingresar nombre" class="input-text" formControlName="lastname"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label color="light">Edad:</ion-label>
+        <ion-label position="floating" color="success">Edad:</ion-label>
         <ion-input type="number" placeholder="ingresar edad" class="input-text" formControlName="age"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label color="light">Estado:</ion-label>
+        <ion-label position="floating" color="success">Estado:</ion-label>
         <ion-select value="activo">
           <ion-select-option value="activo">Activo</ion-select-option>
           <ion-select-option value="inactivo">Inactivo</ion-select-option>
