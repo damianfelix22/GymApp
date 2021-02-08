@@ -18,6 +18,11 @@
       </ion-item>
 
       <ion-item>
+        <ion-label>Fecha:</ion-label>
+        <ion-datetime displayFormat="DD-MM-YYYY" value="{{rutina.date}}"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
         <ion-label>Clase:</ion-label>
         <ion-select class="select" value="{{rutina.class}}" placeholder="Seleccionar">
           <ion-select-option>Crossfit</ion-select-option>
@@ -51,6 +56,8 @@
     <ion-row style="height: 10px;"></ion-row>
 
     <div id="description-div"><ion-text id="description">{{rutina.description}}</ion-text></div>
+
+    <ion-item class="item2"><ion-label>Autor: {{rutina.instructor}}</ion-label></ion-item>
 
     <ion-row style="height: 25px;"></ion-row>
 

@@ -1,37 +1,129 @@
-<body>
-  <header>
-    <app-avatar></app-avatar>
-    <ion-menu-button></ion-menu-button>
-  </header>
+<header>
+  <app-avatar></app-avatar>
+  <ion-menu-button></ion-menu-button>
+</header>
 
-  <ion-content id="main">
+<ion-content id="main">
 
-    <div id="title-div">
-      <ion-text id="subtitle">Bienvenido</ion-text>
-      <ion-text id="title">Gym Name</ion-text>
-      
+  <div id="title-div">
+    <ion-text id="subtitle">Bienvenido</ion-text>
+    <ion-text id="title">Gym Name</ion-text>
+    
+  </div>
+
+  <div style="background-color: white;"><div id="card"></div></div>
+
+  <div class="acceso-rapido-div" *ngIf="user.user_role == 'admin'">
+    <div id="acceso-rapido" (click)="nuevoAlumno()">
+      <div class="icon">
+        <ion-icon name="person-add-outline" style="zoom: 1.2;"></ion-icon>
+      </div>
+      <ion-label color="light">Nuevo<br>alumno</ion-label>
     </div>
-
-    <div style="background-color: white;"><div id="card"></div></div>
-  
-    <div id="content">
-
-      <div class="btn-div" *ngIf="user.user_role == 'admin'"><app-clases-button></app-clases-button></div>
-      <div class="btn-div" *ngIf="user.user_role == 'admin'"><app-alumnos-button></app-alumnos-button></div>
-      <div class="btn-div" *ngIf="user.user_role == 'admin'"><app-instructor-button></app-instructor-button></div>
-      <div class="btn-div" *ngIf="user.user_role == 'admin'"><app-rutinas-button></app-rutinas-button></div>
-      <div class="btn-div" *ngIf="user.user_role == 'admin'"><app-herramientas-button></app-herramientas-button></div>
-
-      <div class="btn-div" *ngIf="user.user_role == 'alumno'"><app-clases-button></app-clases-button></div>
-      <div class="btn-div" *ngIf="user.user_role == 'alumno'"><app-rutinas-button></app-rutinas-button></div>
-      <div class="btn-div" *ngIf="user.user_role == 'alumno'"><app-herramientas-button></app-herramientas-button></div>
-
-      <div class="btn-div" *ngIf="user.user_role == 'instructor'"><app-clases-button></app-clases-button></div>
-      <div class="btn-div" *ngIf="user.user_role == 'instructor'"><app-alumnos-button></app-alumnos-button></div>
-      <div class="btn-div" *ngIf="user.user_role == 'instructor'"><app-rutinas-button></app-rutinas-button></div>
-      <div class="btn-div" *ngIf="user.user_role == 'instructor'"><app-herramientas-button></app-herramientas-button></div>
-
+    <div id="acceso-rapido" (click)="nuevaClase()">
+      <div class="icon">
+        <ion-icon name="calendar-outline" style="zoom: 1.2;"></ion-icon>
+      </div>
+      <ion-label color="light">Nueva<br>clase</ion-label>
     </div>
+    <div id="acceso-rapido" (click)="nuevaRutina()">
+      <div class="icon">
+        <ion-icon name="create-outline" style="zoom: 1.2;"></ion-icon>
+      </div>
+      <ion-label color="light">Nueva<br>rutina</ion-label>
+    </div>
+    <div id="acceso-rapido" (click)="nuevoInstructor()">
+      <div class="icon">
+        <ion-icon name="body-outline" style="zoom: 1.2;"></ion-icon>
+      </div>
+      <ion-label color="light">Nuevo<br>instructor</ion-label>
+    </div>
+  </div>
 
-  </ion-content>
-</body>
+
+  <div class="acceso-rapido-div" *ngIf="user.user_role == 'instructor'">
+    <div id="acceso-rapido" (click)="nuevaRutina()">
+      <div class="icon">
+        <ion-icon name="create-outline" style="zoom: 1.2;"></ion-icon>
+      </div>
+      <ion-label color="light">Nueva<br>rutina</ion-label>
+    </div>
+    <div id="acceso-rapido" (click)="cronometro()">
+      <div class="icon">
+        <ion-icon name="stopwatch-outline" style="zoom: 1.2;"></ion-icon>
+      </div>
+      <ion-label color="light">Cronómetro</ion-label>
+    </div>
+    <div id="acceso-rapido" (click)="temporizador()">
+      <div class="icon">
+        <ion-icon name="hourglass-outline" style="zoom: 1.2;"></ion-icon>
+      </div>
+      <ion-label color="light">Temporizador</ion-label>
+    </div>
+  </div>
+
+  <div class="acceso-rapido-div" *ngIf="user.user_role == 'alumno'">
+    <div id="acceso-rapido" (click)="reservarClase()">
+      <div class="icon">
+        <ion-icon name="calendar-outline" style="zoom: 1.2;"></ion-icon>
+      </div>
+      <ion-label color="light">Reservar<br>clase</ion-label>
+    </div>
+    <div id="acceso-rapido" (click)="cronometro()">
+      <div class="icon">
+        <ion-icon name="stopwatch-outline" style="zoom: 1.2;"></ion-icon>
+      </div>
+      <ion-label color="light">Cronómetro</ion-label>
+    </div>
+    <div id="acceso-rapido" (click)="temporizador()">
+      <div class="icon">
+        <ion-icon name="hourglass-outline" style="zoom: 1.2;"></ion-icon>
+      </div>
+      <ion-label color="light">Temporizador</ion-label>
+    </div>
+  </div>
+
+
+  <div id="content">
+
+    <div class="btn-div" *ngIf="user.user_role == 'admin'"><app-clases-button></app-clases-button></div>
+    <div class="btn-div" *ngIf="user.user_role == 'admin'"><app-alumnos-button></app-alumnos-button></div>
+    <div class="btn-div" *ngIf="user.user_role == 'admin'"><app-instructor-button></app-instructor-button></div>
+    <div class="btn-div" *ngIf="user.user_role == 'admin'"><app-rutinas-button></app-rutinas-button></div>
+    <div class="btn-div" *ngIf="user.user_role == 'admin'"><app-herramientas-button></app-herramientas-button></div>
+
+    <div class="btn-div" *ngIf="user.user_role == 'alumno'"><app-clases-button></app-clases-button></div>
+    <div class="btn-div" *ngIf="user.user_role == 'alumno'"><app-rutinas-button></app-rutinas-button></div>
+    <div class="btn-div" *ngIf="user.user_role == 'alumno'"><app-herramientas-button></app-herramientas-button></div>
+
+    <div class="btn-div" *ngIf="user.user_role == 'instructor'"><app-clases-button></app-clases-button></div>
+    <div class="btn-div" *ngIf="user.user_role == 'instructor'"><app-alumnos-button></app-alumnos-button></div>
+    <div class="btn-div" *ngIf="user.user_role == 'instructor'"><app-rutinas-button></app-rutinas-button></div>
+    <div class="btn-div" *ngIf="user.user_role == 'instructor'"><app-herramientas-button></app-herramientas-button></div>
+
+  </div>
+
+  <ion-row style="height: 1em;"></ion-row>
+
+  <div id="my-gym-div">
+    <div class="gym-name-div"><ion-text>Mi Gimnasio</ion-text></div>
+    <div id="my-gym-info">
+      <ion-item>
+        <ion-icon name="location-outline"></ion-icon>
+        <ion-text>Ubicación del gimnasio</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="alarm-outline"></ion-icon>
+        <ion-text>Abiertos desde las 16:00 hasta las 22:00</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="information-circle-outline"></ion-icon>
+        <ion-text>Otra información del gimnasio</ion-text>
+      </ion-item>
+    </div>
+    <ion-row style="height: 1em;"></ion-row>
+  </div>
+
+  <ion-row style="height: 2em;"></ion-row>
+
+</ion-content>
