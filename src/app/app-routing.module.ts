@@ -42,14 +42,15 @@ const routes: Routes = [
   {
     path: 'herramientas',
     loadChildren: () => import('./modules/herramientas/herramientas.module').then( m => m.HerramientasPageModule)
-  },  {
-    path: 'user-page',
-    loadChildren: () => import('./modules/user-page/user-page.module').then( m => m.UserPagePageModule)
   },
   {
-    path: 'gym-page',
-    loadChildren: () => import('./gym-page/gym-page.module').then( m => m.GymPagePageModule)
+    path: 'gym',
+    loadChildren: () => import('./modules/gym/gym.module').then( m => m.GymPageModule)
+  },  {
+    path: 'user',
+    loadChildren: () => import('./modules/user/user.module').then( m => m.UserPageModule)
   },
+
 
 
 

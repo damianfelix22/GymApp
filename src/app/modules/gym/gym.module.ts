@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { GymPagePageRoutingModule } from './gym-page-routing.module';
+import { GymPageRoutingModule } from './gym-routing.module';
 
-import { GymPagePage } from './gym-page.page';
+import { GymPage } from './gym.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    GymPagePageRoutingModule
+    GymPageRoutingModule
   ],
-  declarations: [GymPagePage]
+  declarations: [GymPage]
 })
-export class GymPagePageModule {}
+export class GymPageModule {}
