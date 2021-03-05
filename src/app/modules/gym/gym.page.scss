@@ -15,6 +15,18 @@ header{
     }
 }
 
+#header-div{
+    color: #00bb70;
+    width: fit-content;
+    position: absolute;
+    top: 33px;
+    left: 25px;
+
+    ion-icon{
+        zoom: 1.5;
+    }
+}
+
 #title{
     color: #00bb70;
     font-size: 24px;
