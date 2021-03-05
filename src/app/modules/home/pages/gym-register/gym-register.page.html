@@ -1,9 +1,47 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>gymRegister</ion-title>
-  </ion-toolbar>
-</ion-header>
+<body>
+  <header>
+    <div id="header-div" (click)="atras()">
+      <ion-icon name="arrow-back"></ion-icon>
+      <ion-title>atras</ion-title>
+    </div>
+  </header>
 
-<ion-content>
+  <div id="content">
+    <form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+      
+      <ion-item>
+        <ion-label color="medium" position="floating">Nombre del Gimnasio</ion-label>
+        <ion-input type="text" formControlName="gymName"></ion-input>
+      </ion-item>
 
-</ion-content>
+      <ion-item>
+        <ion-label color="medium" position="floating">Email</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="medium" position="floating">Nombre del Administrador</ion-label>
+        <ion-input type="text" formControlName="name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="medium" position="floating">Apellido del Administrador</ion-label>
+        <ion-input type="text" formControlName="lastname"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="medium" position="floating">Contraseña</ion-label>
+        <ion-input type="password" formControlName="pass1"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="medium" position="floating">Repetir Contraseña</ion-label>
+        <ion-input type="password" formControlName="pass2"></ion-input>
+      </ion-item>
+
+      <ion-row style="height: 4em;"></ion-row>
+
+      <ion-button class="button" type="submit" [disabled]="!registerForm.valid">Registrar Gimnasio</ion-button>
+    </form>
+  </div>
+</body>

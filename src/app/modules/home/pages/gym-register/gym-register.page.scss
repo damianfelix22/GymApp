@@ -1,0 +1,44 @@
+body{
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header{
+    color: #00bb70;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    padding: 10px;
+}
+
+#header-div{
+    width: fit-content;
+    display: flex;
+    align-items: center;
+}
+
+#content{
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+}
+
+form{
+    padding-top: 2em;
+}
+
+.button{
+    height: 40px;
+    --border-radius: 25px;
+    --background: #00bb70;
+    --box-shadow: 0;
+    color:white;
+    font-weight: bold;
+    font-size: 13px;
+}
+

@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { GymRegisterPageRoutingModule } from './gym-register-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { GymRegisterPage } from './gym-register.page';
 
@@ -13,7 +14,8 @@ import { GymRegisterPage } from './gym-register.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    GymRegisterPageRoutingModule
+    GymRegisterPageRoutingModule,
+    ReactiveFormsModule
   ],
   declarations: [GymRegisterPage]
 })
