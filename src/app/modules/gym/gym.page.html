@@ -1,10 +1,54 @@
 <header>
   <ion-text id="title">Mi Gimnasio</ion-text>
-  <ion-menu-button></ion-menu-button>
+  <img id="avatar" src="{{gym.avatar}}">
 </header>
 
 <ion-content id="main">
-  <div style="background-color: #00bb70;"><div id="card"></div></div>
 
+  <div id="content">
+
+    <ion-row style="height: 15px;"></ion-row>
+
+    <form (ngSubmit)="onSubmit()" [formGroup]="gymForm">
+      <ion-item>
+        <ion-label position="floating" color="success">Nombre:</ion-label>
+        <ion-input type="text" class="input-text" formControlName="name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating" color="success">Teléfono:</ion-label>
+        <ion-input type="tel" class="input-text" formControlName="tel"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating" color="success">Clases:</ion-label>
+        <ion-select interface="action-sheet" (ionChange)="select($event)"  multiple="true" [value]="(clases)">
+          <ion-select-option *ngFor="let clase of clases" value="{{clase}}">{{clase}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating" color="success">Abierto desde las:</ion-label>
+        <ion-datetime displayFormat="HH:mm" value="{{gym.openTime}}"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating" color="success">Abierto hasta las:</ion-label>
+        <ion-datetime displayFormat="HH:mm" value="{{gym.closeTime}}"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating" color="success">Ubicación:</ion-label>
+        <ion-input type="text" class="input-text" value="{{gym.location}}"></ion-input>
+      </ion-item>
+
+      <ion-row style="height: 20px;"></ion-row>
+
+      <ion-button class="button" type="submit" [disabled]="!gymForm.valid">Guardar</ion-button>
+    </form>
+
+    <ion-row style="height: 25px;"></ion-row>
+
+  </div>
 
 </ion-content>
