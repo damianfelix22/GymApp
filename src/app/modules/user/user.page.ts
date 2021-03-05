@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-user',
@@ -7,9 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserPage implements OnInit {
 
+  alumnoForm = new FormGroup({ });
+  user: any = {
+    name: "Lucrecia",                                                 //Nombre
+    lastname: "Felix",                                                //Apellido
+    avatar: 'https://petapixel.com/assets/uploads/2017/11/fake3.jpg', //Avatar
+    startDate: '04-03-2020',                                          //Fecha de Inicio
+    lastPayment: '01-04-2021',                                        //Ultimo pago de matrìcula
+    expirationDate: '02-04-2021',                                     //Fecha de vencimiento de la matricula
+    classes: ["Crossfit", "Spinning"],                                //Clases a las que está autorizado
+    reservation: 'Spinning',                                          //Clase reservada en este momento
+    lastReservations: 3                                               //Clases reservadas desde su último pago
+  };
+  clases: any;
+
   constructor() { }
 
   ngOnInit() {
+    this.clases = this.user.classes;
+
+    this.alumnoForm = new FormGroup({
+      name: new FormControl(this.user.name, [Validators.required, Validators.pattern('[a-zA-Z ]*')]),
+      lastname: new FormControl(this.user.lastname, [Validators.required, Validators.pattern('[a-zA-Z ]*')])
+    });
   }
 
 }
