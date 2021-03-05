@@ -1,0 +1,120 @@
+header{
+    background-color: white;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#title{
+    color: #00bb70;
+    font-size: 24px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+#card{
+    height: 40px;
+    width: 100%;
+    background-color: white;
+    border-radius: 0 0 10px 10px;
+    justify-content: center;
+    text-align: center;
+}
+
+#main{
+    --background: #00bb70;
+}
+
+ion-card{
+    width: 80%;
+    height: 30em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#content{
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: left;
+    margin: 1%;
+}
+
+#slider-points{
+    color: white;
+    font-size: 35px;
+    position: relative;
+    bottom: 6%;
+    display: flex;
+    justify-content: center;
+}
+
+.herramienta{
+    height: 80px;
+    width: 90%;
+    background-color: #4ddda4;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.tool-name{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.btn-div{
+    width: 45%;
+    padding-top: 30%;
+    position: relative;
+    margin: 2%;
+}
+
+#button{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    padding-left: 15px;
+    background-color: #fcfcfc;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 10px;
+}
+
+#icon-div{
+    background-color: #00bb70;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#icon{
+    color: white;
+    zoom: 1.7;
+}
+
+#title{
+    font-size: 24px;
+    color: #00bb70;
+    font-weight: bold;
+}
+
+#btn-title{
+    font-size: 16px;
+    color: #00bb70;
+    font-weight: bold;
+}

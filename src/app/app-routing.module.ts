@@ -21,8 +21,39 @@ const routes: Routes = [
   },
   {
     path: 'menu',
-    loadChildren: () => import('./modules/admin/pages/menu/menu.module').then( m => m.MenuPageModule)
+    loadChildren: () => import('./modules/menu/menu.module').then( m => m.MenuPageModule)
   },
+  {
+    path: 'clases',
+    loadChildren: () => import('./modules/clases/clases.module').then( m => m.ClasesPageModule)
+  },
+  {
+    path: 'rutinas',
+    loadChildren: () => import('./modules/rutinas/rutinas.module').then( m => m.RutinasPageModule)
+  },
+  {
+    path: 'instructores',
+    loadChildren: () => import('./modules/instructores/instructores.module').then( m => m.InstructoresPageModule)
+  },
+  {
+    path: 'alumnos',
+    loadChildren: () => import('./modules/alumnos/alumnos.module').then( m => m.AlumnosPageModule)
+  },
+  {
+    path: 'herramientas',
+    loadChildren: () => import('./modules/herramientas/herramientas.module').then( m => m.HerramientasPageModule)
+  },
+  {
+    path: 'gym',
+    loadChildren: () => import('./modules/gym/gym.module').then( m => m.GymPageModule)
+  },  {
+    path: 'user',
+    loadChildren: () => import('./modules/user/user.module').then( m => m.UserPageModule)
+  },
+
+
+
+
 ];
 
 @NgModule({

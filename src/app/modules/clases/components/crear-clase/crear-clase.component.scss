@@ -1,0 +1,133 @@
+header{
+    padding-top: 20px;
+    padding-bottom: 10px;
+    background-color: white;
+    align-items: flex-end;
+    text-align: center;
+}
+
+#icon{
+    padding: 15px;
+    position: absolute;
+    align-self: flex-end;
+    zoom: 1.5;
+}
+
+#title{
+    color: #00c964;
+    font-size: 24px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+#title2{
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+#card{
+    height: 40px;
+    width: 100%;
+    background-color: white;
+    border-radius: 0 0 50px 50px;
+    justify-content: center;
+    text-align: center;
+}
+
+#main{
+    width: 100%;
+}
+
+#content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+#imagen{
+    border-radius: 15px;
+    width: 80%;
+}
+
+ion-item{
+    --border-color: rgb(179, 179, 179);
+    --padding-start: 0;
+    width: 70%;
+    text-align: center;
+    padding-top: 15px;
+    font-size: 14px;
+    ion-label{
+        text-align: left;
+        font-weight: bold;
+        font-size: 20px;
+        padding-bottom: 10px;
+    }
+}
+
+.item2{
+    --background: #00bb70;
+    color: white;
+    font-weight: bold;
+    width: 90%;
+    justify-content: center;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.area{
+    height: 10em;
+    padding: 10px;
+    border: white;
+    text-align: justify;
+}
+
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.button{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 40px;
+    --border-radius: 25px;
+    --background: #00bb70;
+    --box-shadow: 0;
+    color:#ffffff;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.input-text{
+    text-align: center;
+}
+
+#agregarHorario{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px 0px 25px 25px;
+    background-color:#eeeeee;
+    ion-item{
+        --padding-start: 15px;
+        --border-radius: 100px;
+        --border-color: #ffffff;
+        ion-label{
+            font-size: 15px;
+        }
+    }
+    .button{
+        width: 70%;
+    }
+}

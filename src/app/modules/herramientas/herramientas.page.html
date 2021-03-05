@@ -1,0 +1,50 @@
+<header>
+  <app-avatar></app-avatar>
+  <ion-menu-button></ion-menu-button>
+</header>
+
+<ion-content id="main">
+
+  <div style="background-color: #00bb70;">
+    <div id="card">
+      <ion-text id="title">Herramientas</ion-text>
+    </div>
+  </div>
+
+  <ion-row style="height: 2em;"></ion-row>
+
+  <div id="content">
+    <div class="btn-div">
+      <div id="button" (click)="cronometro()">
+        <div id="icon-div"><ion-icon id="icon" name="stopwatch-outline"></ion-icon></div>
+        <ion-row style="height: 10px;"></ion-row>
+        <ion-text id="btn-title">Cronómetro</ion-text>
+      </div>
+    </div>
+  
+    <div class="btn-div">
+      <div id="button" (click)="temporizador()">
+        <div id="icon-div"><ion-icon id="icon" name="hourglass-outline"></ion-icon></div>
+        <ion-row style="height: 10px;"></ion-row>
+        <ion-text id="btn-title">Temporizador</ion-text>
+      </div>
+    </div>
+  
+    <div class="btn-div">
+      <div id="button" (click)="tabata()">
+        <div id="icon-div"><ion-icon id="icon" name="flash-outline"></ion-icon></div>
+        <ion-row style="height: 10px;"></ion-row>
+        <ion-text id="btn-title">Tábata</ion-text>
+      </div>
+    </div>
+  
+    <div class="btn-div">
+      <div id="button">
+        <div id="icon-div"><ion-icon id="icon" name="barbell-outline"></ion-icon></div>
+        <ion-row style="height: 10px;"></ion-row>
+        <ion-text id="btn-title">1RM</ion-text>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

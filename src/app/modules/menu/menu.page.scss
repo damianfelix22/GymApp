@@ -1,0 +1,124 @@
+header{
+    background-color: white;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#title-div{
+    background-color: white;
+    padding-top: 1em;
+    padding-left: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#title{
+    color: #00bb70;
+    font-size: 24px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+#subtitle{
+    color: #7e7e7e;
+    font-size: 18px;
+}
+
+#card{
+    height: 25px;
+    width: 100%;
+    background-color: #00bb70;
+    border-radius: 10px 10px 0 0;
+}
+
+#main{
+    --background: #00bb70;
+}
+
+#content{
+    width: 100%;
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: left;
+    margin: 1%;
+}
+
+.btn-div{
+    width: 45%;
+    padding-top: 30%;
+    position: relative;
+    margin: 2%;
+}
+
+#acceso-rapido{
+    height: 5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+
+    ion-label{
+        font-size: 12px;
+        text-align: center;
+    }
+}
+
+.icon{
+    width: 2.5em;
+    height: 2.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fcfcfc;
+    border-radius: 100%;
+    box-shadow: 5px 5px 10px rgba($color: #000000, $alpha: 0.1);
+    color: #00a563;
+    margin-bottom: 5px;
+}
+
+.acceso-rapido-div{
+    margin: 5%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#my-gym-div{
+    margin: 3%;
+    background-color: #fcfcfc;
+    width: 94%;
+    border-radius: 10px;
+}
+
+.gym-name-div{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    margin-left: 4%;
+
+    ion-text{
+        color: #00bb70;
+        font-weight: bold;
+    }
+}
+
+#my-gym-info{
+    ion-icon{
+        color: #00bb70;
+        margin-right: 15px;
+    }
+
+    ion-item{
+        --border-color: #fcfcfc;
+        --background: #fcfcfc;
+    }
+
+    ion-text{
+        font-weight: bold;
+        color: #969696;
+        font-size: 14px;
+    }
+}

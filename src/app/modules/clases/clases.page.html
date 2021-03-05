@@ -1,0 +1,59 @@
+<header>
+  <app-avatar></app-avatar>
+  <ion-menu-button></ion-menu-button>
+</header>
+
+<div style="background-color: #00bb70;">
+  <div id="card">
+    <ion-text id="title">Clases</ion-text>
+  </div>
+</div>
+
+<ion-content id="main">
+
+  <div id="content">
+
+    <ion-row style="height: 15px;"></ion-row>
+
+    <!-- barra de búsqueda -->
+    <ion-searchbar
+      id="searchbar" 
+      debounce="500" 
+      placeholder="busca clases o instructores" 
+      (ionInput)="buscar($event)" 
+      (ionCancel)="cancelarBusqueda($event)">
+    </ion-searchbar>
+
+    <!-- tarjetas de clases -->
+    <div id="card-div" *ngFor="let clase of clasesEncontradas">
+      <ion-card mode="ios" id="clase" (click)="abrirClase(clase)">
+        <ion-img src="{{clase.image}}"></ion-img>
+        <ion-card-header>
+          <ion-card-title>{{clase.name}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-text>{{clase.description}}</ion-text><br>
+          <ion-chip><strong>{{clase.instructor}}</strong></ion-chip>
+        </ion-card-content>
+      </ion-card>
+    </div> 
+
+    <ion-row style="height: 2em;"></ion-row>
+
+  </div>
+
+  <!-- botón instructor: crear nueva clase -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="user.user_role == 'admin'" >
+    <ion-fab-button color="light" (click)="nuevaClase()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <!-- botón alumno: reservar una clase -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="user.user_role == 'alumno'" >
+    <ion-fab-button color="light" (click)="reservar()">
+      <ion-icon name="calendar-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

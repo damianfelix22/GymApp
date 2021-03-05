@@ -1,0 +1,124 @@
+<header>
+  <ion-text id="title">{{clase.name}}</ion-text>
+</header>
+
+<ion-icon id="icon" name="close" (click)="dismiss()"></ion-icon>
+
+<ion-content id="main">
+  
+  <!-- VISTA DE ADMINISTRADOR -->
+  <div id="content" *ngIf="user.user_role == 'admin'">
+
+    <ion-row style="height: 15px;"></ion-row>
+
+    <ion-card id="imagen">
+      <ion-img src="{{clase.image}}"></ion-img>
+    </ion-card>
+
+    <form (ngSubmit)="onSubmit()" [formGroup]="classForm">
+      <ion-item>
+        <ion-label position="floating"  color="success">Nombre de la clase</ion-label>
+        <ion-input type="text" formControlName="className"></ion-input>
+      </ion-item>
+
+      <ion-item (click)="dias()">
+        <ion-label color="success" style="font-size: 14px;">Días y Horarios</ion-label>
+        <ion-icon slot="end" name="information-circle-outline" color="success"></ion-icon>
+      </ion-item>
+
+      <ion-item (click)="muestra()">
+        <ion-label color="success" style="font-size: 14px;">Agregar nuevo horario</ion-label>
+        <ion-icon  *ngIf="showButton" slot="end" name="add-circle-outline" color="success"></ion-icon>
+        <ion-icon  *ngIf="!showButton" slot="end" name="remove-circle-outline" color="success"></ion-icon>
+      </ion-item>
+
+      <div id="agregarHorario" *ngIf="!showButton">
+        <ion-item>
+          <ion-label color="success">Día:</ion-label>
+          <ion-select value="lunes">
+            <ion-select-option value="lunes">Lunes</ion-select-option>
+            <ion-select-option value="martes">Martes</ion-select-option>
+            <ion-select-option value="miercoles">Miércoles</ion-select-option>
+            <ion-select-option value="jueves">Jueves</ion-select-option>
+            <ion-select-option value="viernes">Viernes</ion-select-option>
+            <ion-select-option value="sabado">Sábado</ion-select-option>
+            <ion-select-option value="domingo">Domingo</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label color="success">Comienza:</ion-label>
+          <ion-datetime displayFormat="HH:mm" value="00:00"></ion-datetime>
+        </ion-item>
+        <ion-item>
+          <ion-label color="success">Termina:</ion-label>
+          <ion-datetime displayFormat="HH:mm" value="01:00"></ion-datetime>
+        </ion-item>
+        <ion-button (click)="nuevoHorario()">Agregar Horario</ion-button>
+      </div>
+
+      <ion-item>
+        <ion-label position="floating" color="success">Instructor</ion-label>
+        <ion-input type="text" class="input-text" formControlName="instructorName"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating" color="success">Cupo Máximo</ion-label>
+        <ion-input type="text" class="input-text" formControlName="maxQuota"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating" color="success" style="padding-right: 15px;">Descripción</ion-label>
+        <ion-textarea class="area" rows="6" formControlName="description"></ion-textarea>
+      </ion-item>
+
+      <ion-row style="height: 20px;"></ion-row>
+
+      <ion-button class="button" type="submit" [disabled]="!classForm.valid">Guardar</ion-button>
+    </form>
+
+    <ion-row style="height: 25px;"></ion-row>
+
+  </div>
+
+  <!-- VISTA DE ALUMNO/INSTRUCTOR -->
+  <div id="content" *ngIf="user.user_role == 'alumno' || user.user_role == 'instructor'">
+
+    <ion-row style="height: 15px;"></ion-row>
+
+    <ion-card id="imagen">
+      <ion-img src="{{clase.image}}"></ion-img>
+    </ion-card>
+
+    <ion-row style="height: 15px;"></ion-row>
+
+    <div id="title2">
+      <ion-label id="title2" color="success">{{clase.name}}</ion-label>
+    </div>
+
+    <ion-item (click)="dias()">
+      <ion-label color="success" style="font-size: 14px;">Días y Horarios</ion-label>
+      <ion-icon slot="end" name="information-circle-outline" color="success"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="success">Instructor</ion-label>
+      <ion-input type="text" class="input-text" value="{{clase.instructor}}" disabled="true"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="success">Cupo Máximo</ion-label>
+      <ion-input type="text" class="input-text" value="{{clase.maxQuota}}" disabled="true"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="success" style="padding-right: 15px;">Descripción</ion-label>
+      <ion-textarea class="area" rows="6" value="{{clase.description}}" disabled="true"></ion-textarea>
+    </ion-item>
+
+    <ion-row style="height: 20px;"></ion-row>
+
+    <ion-row style="height: 25px;"></ion-row>
+
+  </div>
+
+</ion-content>

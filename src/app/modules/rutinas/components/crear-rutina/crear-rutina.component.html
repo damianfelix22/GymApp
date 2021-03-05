@@ -1,0 +1,47 @@
+<header>
+  <ion-text id="title">Nueva Rutina</ion-text>
+</header>
+
+<ion-icon id="icon" name="close" (click)="dismiss()"></ion-icon>
+
+<ion-content id="main">
+
+  <!-- VISTA DE ADMINISTRADOR / INSTRUCTOR -->
+  <div id="content">
+
+    <ion-row style="height: 15px;"></ion-row>
+
+    <form (ngSubmit)="onSubmit()" [formGroup]="rutinaForm">
+      <ion-item>
+        <ion-label position="floating" color="success">Título:</ion-label>
+        <ion-input type="text" placeholder="ingresar título" class="input-text" formControlName="name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating" color="success">Fecha:</ion-label>
+        <ion-datetime displayFormat="DD-MM-YYYY" value="01-01-2021"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating" color="success">Clase:</ion-label>
+        <ion-select class="select" placeholder="Seleccionar">
+          <ion-select-option>Crossfit</ion-select-option>
+          <ion-select-option>Taekwondo</ion-select-option>
+          <ion-select-option>Spinning</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-textarea class="area" placeholder="Descripción de la rutina"  rows="10" formControlName="description"></ion-textarea>
+      </ion-item>
+
+      <ion-row style="height: 20px;"></ion-row>
+
+      <ion-button class="button" type="submit" [disabled]="!rutinaForm.valid">Guardar</ion-button>
+    </form>
+
+    <ion-row style="height: 25px;"></ion-row>
+
+  </div>
+
+</ion-content>
