@@ -8,6 +8,7 @@ import { CronometroComponent } from '../herramientas/components/cronometro/crono
 import { TemporizadorComponent } from '../herramientas/components/temporizador/temporizador.component';
 import { CrearInstructorComponent } from '../instructores/crear-instructor/crear-instructor.component';
 import { CrearRutinaComponent } from '../rutinas/components/crear-rutina/crear-rutina.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -22,7 +23,7 @@ export class MenuPage implements OnInit {
     user_role: 'admin'
   }
 
-  constructor(public modalController: ModalController, public popoverController: PopoverController) { }
+  constructor(public modalController: ModalController, public popoverController: PopoverController, private router: Router) { }
 
   ngOnInit() {
   }
@@ -87,6 +88,10 @@ export class MenuPage implements OnInit {
       translucent: true
     });
     return await popover.present();
+  }
+
+  myGym(){
+    this.router.navigateByUrl('gym')
   }
 
 }
