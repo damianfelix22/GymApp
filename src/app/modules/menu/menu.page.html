@@ -1,5 +1,11 @@
 <header>
-  <app-avatar></app-avatar>
+  <div>
+    <app-avatar></app-avatar>
+    <ion-chip (click)="notifications($event)">
+      <ion-label>3</ion-label>
+      <ion-icon name="notifications"></ion-icon>
+    </ion-chip>
+  </div>
   <ion-menu-button></ion-menu-button>
 </header>
 
