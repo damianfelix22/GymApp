@@ -28,8 +28,9 @@ export class GymPage implements OnInit {
     this.clases = this.gym.classes;
 
     this.gymForm = new FormGroup({
-      name: new FormControl(this.gym.name, [Validators.required, Validators.pattern('[a-zA-Z 0-9]*')]),
+      name: new FormControl(this.gym.name, Validators.required),
       tel: new FormControl(this.gym.tel, [Validators.required, Validators.pattern('[+ 0-9 ]*')]),
+      location: new FormControl(this.gym.tel, Validators.required)
     });
   }
 

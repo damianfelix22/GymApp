@@ -26,13 +26,6 @@
       </ion-item>
 
       <ion-item>
-        <ion-label position="floating" color="success">Clases:</ion-label>
-        <ion-select interface="action-sheet" (ionChange)="select($event)"  multiple="true" [value]="(clases)">
-          <ion-select-option *ngFor="let clase of clases" value="{{clase}}">{{clase}}</ion-select-option>
-        </ion-select>
-      </ion-item>
-
-      <ion-item>
         <ion-label position="floating" color="success">Abierto desde las:</ion-label>
         <ion-datetime displayFormat="HH:mm" value="{{gym.openTime}}"></ion-datetime>
       </ion-item>
@@ -44,7 +37,7 @@
 
       <ion-item>
         <ion-label position="floating" color="success">Ubicación:</ion-label>
-        <ion-input type="text" class="input-text" value="{{gym.location}}"></ion-input>
+        <ion-input type="text" class="input-text" formControlName="location"></ion-input>
       </ion-item>
 
       <ion-row style="height: 20px;"></ion-row>
