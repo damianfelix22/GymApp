@@ -12,7 +12,6 @@ export class RegisterPage implements OnInit {
   registerForm = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z ]*')]),
     lastname: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z ]*')]),
-    gymName: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
     pass1: new FormControl('', [Validators.required, Validators.minLength(6)]),
     pass2: new FormControl('', [Validators.required, Validators.minLength(6)])
@@ -24,7 +23,7 @@ export class RegisterPage implements OnInit {
   }
 
   onSubmit() {
-    alert("Usuario Creado");
+    this.router.navigateByUrl('user');
   }
 
   atras(){
