@@ -9,6 +9,7 @@ import { TemporizadorComponent } from '../herramientas/components/temporizador/t
 import { CrearInstructorComponent } from '../instructores/crear-instructor/crear-instructor.component';
 import { CrearRutinaComponent } from '../rutinas/components/crear-rutina/crear-rutina.component';
 import { Router } from '@angular/router';
+import { NotificationsComponent } from 'src/app/core/components/notifications/notifications.component';
 
 @Component({
   selector: 'app-menu',
@@ -86,6 +87,16 @@ export class MenuPage implements OnInit {
       cssClass: 'pop-over',
       event: ev,
       translucent: true
+    });
+    return await popover.present();
+  }
+
+  async notifications(ev: any) {
+    const popover = await this.popoverController.create({
+      component: NotificationsComponent,
+      cssClass: 'notifications',
+      event: ev,
+      mode: 'ios'
     });
     return await popover.present();
   }
