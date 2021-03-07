@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -22,7 +23,7 @@ export class UserPage implements OnInit {
   };
   clases: any;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.clases = this.user.classes;
@@ -31,6 +32,18 @@ export class UserPage implements OnInit {
       name: new FormControl(this.user.name, [Validators.required, Validators.pattern('[a-zA-Z ]*')]),
       lastname: new FormControl(this.user.lastname, [Validators.required, Validators.pattern('[a-zA-Z ]*')])
     });
+  }
+
+  onSubmit() {
+    this.router.navigateByUrl('menu');
+  }
+
+  atras(){
+    if(this.alumnoForm.valid){
+      this.router.navigateByUrl('menu');
+    }else{
+      alert('Revisa los datos requeridos')
+    }
   }
 
 }

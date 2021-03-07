@@ -1,17 +1,18 @@
 <header>
   <ion-text id="title">Mi Perfil</ion-text>
-  <ion-menu-button></ion-menu-button>
+  <img id="avatar" src="{{user.avatar}}">
+
+  <div id="header-div" (click)="atras()">
+    <ion-icon name="arrow-back"></ion-icon>
+  </div>
+
 </header>
 
 <ion-content id="main">
 
   <div id="content">
 
-    <ion-row style="height: 15px;"></ion-row>
-
-    <img id="avatar" src="{{user.avatar}}">
-
-    <ion-row style="height: 10px;"></ion-row> 
+    <ion-row style="height: 15px;"></ion-row> 
 
     <form (ngSubmit)="onSubmit()" [formGroup]="alumnoForm">
       <ion-item>

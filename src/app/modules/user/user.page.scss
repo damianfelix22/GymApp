@@ -1,11 +1,31 @@
 header{
     background-color: white;
-    padding: 12px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+
+    ion-text{
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+
+    img{
+        margin-bottom: 10px;
+    }
 }
 
+#header-div{
+    color: #00bb70;
+    width: fit-content;
+    position: absolute;
+    top: 33px;
+    left: 25px;
+
+    ion-icon{
+        zoom: 1.5;
+    }
+}
 #title{
     color: #00bb70;
     font-size: 24px;
